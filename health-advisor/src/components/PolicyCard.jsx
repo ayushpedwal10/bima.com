@@ -80,20 +80,6 @@ export default function PolicyCard({ ranked, rank, pr, onInspect, isShortlisted,
           {rc.label}
         </span>
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={onToggleShortlist}
-            disabled={shortlistFull && !isShortlisted}
-            aria-pressed={isShortlisted}
-            title={shortlistFull && !isShortlisted ? "You can compare up to 3 plans" : "Add to shortlist"}
-            className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[11px] font-bold transition-all ${
-              isShortlisted
-                ? "border-blue-200 bg-blue-50 text-blue-700"
-                : "border-slate-200 bg-white text-slate-500 hover:border-blue-300 hover:text-blue-600"
-            } disabled:cursor-not-allowed disabled:opacity-40`}>
-            <span>{isShortlisted ? "★" : "☆"}</span>
-            <span>{isShortlisted ? "Saved" : "Shortlist"}</span>
-          </button>
           <span className="hidden md:flex text-[10px] text-slate-400 font-semibold items-center gap-1">
             Match Score <Tooltip term="Match Score" />
           </span>
@@ -159,6 +145,20 @@ export default function PolicyCard({ ranked, rank, pr, onInspect, isShortlisted,
             <div className="text-[9px] text-slate-400 mt-0.5">IRDAI verified</div>
           </div>
         </div>
+
+        <button
+          type="button"
+          onClick={onToggleShortlist}
+          disabled={shortlistFull && !isShortlisted}
+          aria-pressed={isShortlisted}
+          className={`mt-3 w-full inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-bold transition-all ${
+            isShortlisted
+              ? "border-blue-200 bg-blue-50 text-blue-700"
+              : "border-slate-200 bg-white text-slate-600 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700"
+          } disabled:cursor-not-allowed disabled:opacity-40`}>
+          <span className="text-base leading-none">{isShortlisted ? "★" : "☆"}</span>
+          {isShortlisted ? "Saved to shortlist" : shortlistFull ? "Shortlist full (3 plans)" : "Add to shortlist"}
+        </button>
 
         {/* Market context */}
         <MarketBenchmarkStrip annual={pr.annual} coverageLakhs={policy.coverage / 100000} />
