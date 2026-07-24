@@ -1,0 +1,9 @@
+[project]
+name = "beemasaathi"
+version = "1.0.0"
+requires-python = ">=3.12"
+
+[tool.vercel]
+# The repository also contains a legacy Streamlit app.py. Explicitly select
+# the Flask app that exposes the /api/* routes.
+entrypoint = "api:app"

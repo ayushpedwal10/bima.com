@@ -1,0 +1,501 @@
+customer_id,age,gender,segment,occupation,city,annual_income,family_members,has_children,smoker,bmi,pre_existing_disease,chronic_condition
+C0001,18,Male,student,Student,Kolkata,72097,1,False,False,20.4,False,False
+C0002,19,Female,student,Student,Chennai,57314,1,False,False,29.8,False,False
+C0003,63,Male,senior,Pensioner,Delhi,113628,1,False,False,24.5,True,False
+C0004,33,Other,family,Engineer,Delhi,2105668,4,True,False,34.0,False,False
+C0005,36,Male,couple,Software Engineer,Chennai,1710795,2,True,False,18.4,False,False
+C0006,38,Other,family,Business Owner,Bangalore,2501740,5,True,False,20.8,False,False
+C0007,25,Male,young_professional,Nurse,Mumbai,784714,1,False,False,37.8,False,False
+C0008,23,Other,student,Student,Chennai,105162,1,False,False,21.8,False,False
+C0009,42,Other,family,Manager,Kolkata,2524564,3,True,False,22.6,False,False
+C0010,41,Other,family,Government Employee,Kolkata,1519897,3,True,False,19.4,True,False
+C0011,24,Other,student,Student,Delhi,100039,1,False,False,27.1,False,False
+C0012,63,Other,senior,Consultant,Hyderabad,1444194,2,False,True,26.4,False,False
+C0013,31,Male,young_professional,Teacher,Pune,411579,1,False,False,23.6,False,False
+C0014,71,Male,senior,Pensioner,Chennai,101199,2,False,False,19.8,False,False
+C0015,32,Other,young_professional,Teacher,Bangalore,382582,1,False,True,27.5,True,False
+C0016,47,Female,family,Government Employee,Hyderabad,1292592,4,True,False,29.9,False,False
+C0017,39,Male,couple,Doctor,Chennai,1585435,2,False,True,22.1,False,False
+C0018,18,Male,student,Student,Ahmedabad,60015,1,False,True,18.1,False,False
+C0019,59,Female,senior,Consultant,Kolkata,1297564,2,False,False,27.2,False,True
+C0020,43,Male,family,Doctor,Delhi,2558843,5,True,True,30.9,False,True
+C0021,26,Other,young_professional,Software Engineer,Ahmedabad,862336,1,False,False,26.1,False,False
+C0022,18,Female,student,Student,Kolkata,141711,1,False,False,37.4,False,False
+C0023,36,Female,family,Engineer,Hyderabad,2282084,3,True,True,17.5,False,False
+C0024,70,Male,senior,Consultant,Pune,424632,1,False,False,37.4,False,False
+C0025,25,Other,student,Student,Delhi,131819,1,False,False,28.4,True,False
+C0026,21,Other,student,Student,Kolkata,105847,1,False,True,35.8,False,False
+C0027,73,Other,senior,Pensioner,Bangalore,1196354,2,False,False,21.7,False,True
+C0028,39,Other,couple,Architect,Chennai,1163071,2,True,True,30.2,False,False
+C0029,29,Other,couple,Business Owner,Mumbai,1231924,2,True,False,25.1,False,False
+C0030,64,Female,senior,Consultant,Bangalore,1491226,1,False,False,20.3,True,True
+C0031,31,Other,couple,Software Engineer,Delhi,1219072,2,True,False,35.0,False,False
+C0032,38,Other,family,Engineer,Kolkata,784913,3,True,False,20.2,False,False
+C0033,19,Female,student,Student,Bangalore,19724,1,False,False,31.7,False,True
+C0034,23,Other,young_professional,Nurse,Chennai,623232,1,False,False,36.6,False,True
+C0035,33,Male,young_professional,Teacher,Chennai,407786,1,False,False,29.0,False,False
+C0036,29,Male,young_professional,Teacher,Hyderabad,325990,1,False,True,36.5,False,False
+C0037,24,Male,student,Student,Chennai,10151,1,False,False,22.1,False,False
+C0038,21,Male,student,Student,Pune,104455,1,False,False,35.2,False,False
+C0039,22,Female,student,Student,Pune,46810,1,False,False,37.7,True,False
+C0040,71,Female,senior,Consultant,Chennai,342526,2,False,False,21.4,True,False
+C0041,32,Female,family,Doctor,Kolkata,1984959,5,True,False,34.9,False,False
+C0042,52,Female,family,Government Employee,Hyderabad,1840067,5,True,True,26.1,False,False
+C0043,55,Other,senior,Pensioner,Ahmedabad,737271,2,False,False,33.6,False,False
+C0044,31,Male,young_professional,Nurse,Pune,796171,1,False,False,37.2,False,False
+C0045,33,Female,young_professional,Sales Executive,Delhi,625498,1,False,False,21.6,True,False
+C0046,50,Female,family,Business Owner,Delhi,1415520,5,True,False,27.6,True,False
+C0047,25,Other,young_professional,Teacher,Ahmedabad,843118,1,False,False,28.9,False,False
+C0048,72,Other,senior,Consultant,Kolkata,1348754,2,False,False,35.8,False,False
+C0049,35,Other,family,Manager,Ahmedabad,2590928,4,True,False,22.6,False,False
+C0050,27,Male,young_professional,Accountant,Delhi,761239,1,False,True,23.4,False,False
+C0051,26,Female,young_professional,Accountant,Ahmedabad,701641,1,False,False,32.0,True,False
+C0052,21,Male,student,Student,Ahmedabad,110138,1,False,False,33.3,False,True
+C0053,34,Female,couple,Manager,Chennai,1317861,2,False,False,32.6,False,False
+C0054,45,Other,family,Engineer,Bangalore,721738,4,True,False,31.4,False,False
+C0055,55,Female,senior,Pensioner,Kolkata,926320,1,False,True,26.3,False,True
+C0056,30,Male,young_professional,Sales Executive,Hyderabad,642722,1,False,False,35.5,False,False
+C0057,30,Male,family,Business Owner,Mumbai,2862487,3,True,False,24.7,False,False
+C0058,23,Female,young_professional,Sales Executive,Hyderabad,459784,1,False,False,27.2,False,False
+C0059,32,Female,young_professional,Nurse,Kolkata,420096,1,False,False,20.9,False,False
+C0060,24,Female,young_professional,Software Engineer,Mumbai,554646,1,False,True,33.3,False,False
+C0061,68,Female,senior,Pensioner,Delhi,1487310,2,False,True,30.8,True,False
+C0062,39,Female,couple,Architect,Ahmedabad,820845,2,False,True,28.2,False,False
+C0063,48,Other,family,Government Employee,Ahmedabad,1725732,4,True,False,34.5,True,False
+C0064,67,Female,senior,Pensioner,Pune,805474,1,False,False,24.2,False,False
+C0065,63,Other,senior,Consultant,Chennai,1265578,1,False,False,21.4,True,False
+C0066,50,Female,family,Doctor,Pune,2658653,4,True,False,19.4,True,False
+C0067,71,Male,senior,Pensioner,Hyderabad,820911,2,False,False,28.8,False,False
+C0068,21,Female,student,Student,Ahmedabad,82719,1,False,True,28.5,False,False
+C0069,71,Other,senior,Pensioner,Mumbai,1351560,2,False,False,34.6,True,False
+C0070,59,Male,senior,Pensioner,Delhi,675272,1,False,False,28.8,False,True
+C0071,64,Male,senior,Pensioner,Delhi,1084396,2,False,False,21.3,True,False
+C0072,45,Male,family,Doctor,Delhi,910723,5,True,False,18.6,False,False
+C0073,24,Other,student,Student,Hyderabad,59162,1,False,False,25.3,False,False
+C0074,56,Male,senior,Retired,Chennai,1378488,1,False,False,21.8,True,False
+C0075,57,Other,senior,Pensioner,Hyderabad,428272,1,False,False,31.6,False,True
+C0076,32,Other,family,Engineer,Delhi,1579050,4,True,False,30.3,False,False
+C0077,33,Female,young_professional,Nurse,Hyderabad,456226,1,False,False,34.4,True,False
+C0078,25,Female,student,Student,Mumbai,79715,1,False,False,36.8,False,False
+C0079,33,Other,couple,Software Engineer,Hyderabad,554242,2,True,False,31.3,False,False
+C0080,20,Male,student,Student,Ahmedabad,123338,1,False,False,26.6,False,False
+C0081,41,Other,family,Engineer,Hyderabad,2312736,4,True,False,19.6,False,False
+C0082,47,Other,family,Manager,Mumbai,753918,4,True,True,22.7,True,False
+C0083,69,Female,senior,Retired,Chennai,966642,1,False,True,24.9,False,False
+C0084,59,Female,senior,Retired,Bangalore,704040,2,False,False,27.4,True,False
+C0085,55,Female,senior,Retired,Bangalore,1258155,2,False,True,37.8,False,False
+C0086,41,Other,couple,Manager,Chennai,1073413,2,False,False,37.6,False,False
+C0087,59,Female,senior,Pensioner,Mumbai,246402,2,False,False,35.0,False,False
+C0088,40,Male,couple,Manager,Pune,811627,2,False,False,24.6,False,False
+C0089,32,Other,young_professional,Sales Executive,Kolkata,701574,1,False,False,33.4,True,False
+C0090,30,Other,young_professional,Sales Executive,Delhi,338817,1,False,True,37.3,False,False
+C0091,30,Other,family,Doctor,Pune,1204631,4,True,False,37.4,True,False
+C0092,50,Other,family,Engineer,Mumbai,936866,4,True,False,35.1,False,False
+C0093,21,Male,student,Student,Ahmedabad,75334,1,False,False,32.8,False,False
+C0094,25,Other,couple,Architect,Kolkata,596450,2,False,False,23.5,False,False
+C0095,25,Male,young_professional,Accountant,Bangalore,483573,1,False,True,35.4,False,False
+C0096,50,Male,family,Manager,Bangalore,1665258,4,True,False,17.7,False,False
+C0097,41,Male,family,Engineer,Ahmedabad,1854743,5,True,False,31.7,False,False
+C0098,29,Male,young_professional,Sales Executive,Hyderabad,899704,1,False,False,23.6,False,True
+C0099,56,Other,senior,Pensioner,Chennai,1371726,2,False,False,36.0,False,True
+C0100,32,Female,young_professional,Software Engineer,Mumbai,562801,1,False,False,32.3,False,False
+C0101,31,Other,family,Government Employee,Bangalore,2130338,5,True,True,36.1,False,False
+C0102,41,Male,couple,Business Owner,Pune,1552339,2,False,False,22.8,False,False
+C0103,32,Male,family,Manager,Pune,1190377,3,True,False,32.3,False,False
+C0104,30,Male,family,Engineer,Pune,1709219,5,True,True,25.1,False,False
+C0105,30,Other,young_professional,Software Engineer,Ahmedabad,326240,1,False,False,36.8,False,False
+C0106,38,Female,couple,Doctor,Bangalore,744687,2,True,True,18.3,False,False
+C0107,41,Female,family,Engineer,Kolkata,2865731,4,True,False,32.4,False,False
+C0108,23,Male,student,Student,Pune,56955,1,False,False,37.0,False,False
+C0109,38,Male,family,Manager,Mumbai,1396114,3,True,False,34.4,True,False
+C0110,32,Male,couple,Doctor,Pune,764081,2,True,True,33.2,False,False
+C0111,55,Male,senior,Retired,Bangalore,681487,1,False,False,28.6,False,True
+C0112,32,Female,couple,Software Engineer,Delhi,1734914,2,False,True,22.9,False,False
+C0113,41,Female,family,Manager,Hyderabad,2752676,5,True,True,27.8,False,True
+C0114,18,Male,student,Student,Delhi,125562,1,False,False,26.2,False,False
+C0115,29,Female,couple,Architect,Hyderabad,637745,2,True,False,30.5,False,False
+C0116,74,Female,senior,Consultant,Chennai,1002193,1,False,False,19.8,False,False
+C0117,37,Female,family,Doctor,Hyderabad,2335659,4,True,False,25.7,False,False
+C0118,33,Other,young_professional,Nurse,Bangalore,797305,1,False,True,34.6,True,False
+C0119,23,Other,student,Student,Hyderabad,32042,1,False,False,35.4,False,False
+C0120,36,Male,couple,Architect,Pune,717266,2,True,True,27.4,False,False
+C0121,32,Female,couple,Business Owner,Hyderabad,1399913,2,True,False,31.0,False,True
+C0122,25,Other,couple,Software Engineer,Delhi,880435,2,True,False,25.7,False,False
+C0123,61,Male,senior,Consultant,Delhi,888936,2,False,False,20.7,False,False
+C0124,25,Female,young_professional,Sales Executive,Kolkata,352179,1,False,False,23.1,False,False
+C0125,35,Male,young_professional,Sales Executive,Hyderabad,837234,1,False,True,26.3,False,False
+C0126,29,Female,young_professional,Nurse,Hyderabad,357443,1,False,True,23.7,False,False
+C0127,18,Female,student,Student,Delhi,130386,1,False,False,21.1,False,False
+C0128,24,Female,student,Student,Kolkata,4912,1,False,False,19.1,False,False
+C0129,24,Female,student,Student,Delhi,5467,1,False,False,21.0,False,False
+C0130,21,Female,student,Student,Chennai,114209,1,False,False,28.2,False,False
+C0131,24,Male,young_professional,Nurse,Bangalore,835280,1,False,False,28.4,False,False
+C0132,20,Female,student,Student,Ahmedabad,67100,1,False,True,29.8,False,False
+C0133,73,Female,senior,Pensioner,Hyderabad,1041422,2,False,False,30.4,True,True
+C0134,56,Other,senior,Retired,Delhi,838076,1,False,False,26.8,True,False
+C0135,71,Female,senior,Consultant,Chennai,906318,2,False,False,37.1,False,True
+C0136,70,Other,senior,Consultant,Delhi,1151443,1,False,False,26.7,False,False
+C0137,23,Female,young_professional,Nurse,Pune,559778,1,False,False,37.8,False,False
+C0138,43,Female,family,Business Owner,Kolkata,2019214,5,True,False,33.7,False,True
+C0139,29,Other,couple,Manager,Bangalore,1199110,2,True,False,20.4,False,False
+C0140,22,Other,student,Student,Kolkata,146518,1,False,False,33.7,False,False
+C0141,25,Male,couple,Doctor,Bangalore,1260422,2,False,True,21.9,False,False
+C0142,22,Other,student,Student,Bangalore,26513,1,False,False,28.6,False,False
+C0143,34,Female,family,Engineer,Mumbai,1280514,3,True,False,33.3,False,False
+C0144,32,Female,couple,Manager,Chennai,1431552,2,False,False,33.6,False,False
+C0145,69,Female,senior,Retired,Bangalore,1068213,2,False,False,27.8,False,True
+C0146,25,Male,student,Student,Delhi,97311,1,False,False,19.6,False,False
+C0147,39,Female,couple,Business Owner,Mumbai,1576578,2,True,False,19.4,False,False
+C0148,24,Other,student,Student,Delhi,131598,1,False,False,25.4,True,False
+C0149,29,Other,couple,Manager,Ahmedabad,788567,2,True,False,34.5,False,False
+C0150,19,Female,student,Student,Delhi,4981,1,False,False,34.6,False,False
+C0151,27,Other,young_professional,Software Engineer,Ahmedabad,427767,1,False,True,26.1,False,False
+C0152,55,Male,senior,Consultant,Kolkata,1425305,1,False,False,23.5,True,False
+C0153,23,Female,student,Student,Kolkata,17741,1,False,False,28.7,False,False
+C0154,24,Male,student,Student,Pune,97858,1,False,False,17.8,False,False
+C0155,23,Male,student,Student,Bangalore,143134,1,False,False,30.7,False,False
+C0156,25,Other,student,Student,Kolkata,9695,1,False,False,18.4,False,True
+C0157,38,Male,family,Doctor,Hyderabad,753598,5,True,True,24.8,False,False
+C0158,38,Other,couple,Manager,Pune,1338906,2,False,False,25.4,False,False
+C0159,27,Female,couple,Software Engineer,Delhi,1390240,2,True,False,37.9,False,False
+C0160,34,Female,couple,Business Owner,Kolkata,1435153,2,False,True,26.6,False,False
+C0161,19,Male,student,Student,Ahmedabad,106485,1,False,False,33.9,False,False
+C0162,24,Other,young_professional,Accountant,Bangalore,547459,1,False,False,25.0,False,False
+C0163,41,Male,family,Doctor,Chennai,2160337,4,True,False,29.3,False,False
+C0164,20,Other,student,Student,Chennai,130821,1,False,False,36.2,False,False
+C0165,40,Other,couple,Software Engineer,Pune,919804,2,True,True,19.0,False,False
+C0166,27,Other,couple,Doctor,Pune,1653427,2,False,False,35.0,False,False
+C0167,24,Female,young_professional,Accountant,Pune,510743,1,False,False,22.4,False,False
+C0168,59,Other,senior,Pensioner,Kolkata,1383348,1,False,True,25.7,False,False
+C0169,20,Female,student,Student,Bangalore,83106,1,False,False,26.7,False,False
+C0170,56,Male,senior,Consultant,Hyderabad,360384,1,False,False,20.8,False,True
+C0171,31,Male,couple,Doctor,Bangalore,1655198,2,False,True,23.7,False,False
+C0172,74,Other,senior,Consultant,Hyderabad,808039,1,False,False,18.1,True,False
+C0173,35,Female,young_professional,Nurse,Hyderabad,899929,1,False,False,30.6,False,False
+C0174,35,Male,young_professional,Sales Executive,Ahmedabad,725818,1,False,False,19.0,True,False
+C0175,29,Female,couple,Business Owner,Delhi,1155533,2,False,False,35.1,False,False
+C0176,30,Male,young_professional,Sales Executive,Kolkata,428473,1,False,False,22.6,True,False
+C0177,28,Male,young_professional,Nurse,Ahmedabad,627905,1,False,True,20.8,False,False
+C0178,24,Other,student,Student,Ahmedabad,132499,1,False,False,22.4,False,True
+C0179,39,Male,family,Engineer,Pune,2851044,3,True,False,26.3,False,False
+C0180,31,Other,family,Manager,Hyderabad,2991934,5,True,True,28.8,True,False
+C0181,58,Other,senior,Retired,Chennai,369826,1,False,False,33.8,False,False
+C0182,67,Other,senior,Pensioner,Bangalore,1148739,1,False,True,20.3,False,False
+C0183,59,Other,senior,Pensioner,Ahmedabad,787794,2,False,True,37.8,False,False
+C0184,64,Other,senior,Consultant,Mumbai,1095921,1,False,False,31.3,False,False
+C0185,38,Other,family,Engineer,Bangalore,1554385,5,True,True,27.3,False,False
+C0186,23,Other,young_professional,Teacher,Kolkata,415233,1,False,True,26.5,False,False
+C0187,70,Male,senior,Pensioner,Pune,230613,1,False,False,29.0,False,False
+C0188,47,Male,family,Doctor,Ahmedabad,2035823,5,True,False,33.3,False,False
+C0189,27,Female,young_professional,Teacher,Ahmedabad,885196,1,False,False,36.8,False,False
+C0190,41,Male,family,Engineer,Pune,2950855,5,True,False,20.0,False,False
+C0191,26,Other,couple,Doctor,Hyderabad,1103204,2,True,False,26.6,False,False
+C0192,29,Female,couple,Software Engineer,Delhi,729064,2,True,False,31.2,False,False
+C0193,40,Other,couple,Manager,Ahmedabad,710857,2,True,True,28.8,False,False
+C0194,35,Other,young_professional,Accountant,Chennai,601198,1,False,False,30.7,False,False
+C0195,20,Male,student,Student,Ahmedabad,109546,1,False,False,21.1,False,False
+C0196,26,Male,couple,Architect,Ahmedabad,519434,2,False,False,19.7,False,False
+C0197,69,Male,senior,Consultant,Bangalore,672180,1,False,False,24.3,False,False
+C0198,34,Male,couple,Architect,Pune,1690723,2,True,True,35.1,False,False
+C0199,51,Female,family,Engineer,Chennai,1000074,3,True,False,27.3,False,True
+C0200,35,Male,couple,Manager,Hyderabad,1133226,2,True,False,24.9,False,False
+C0201,51,Male,family,Doctor,Chennai,2707723,5,True,False,31.7,False,False
+C0202,30,Male,young_professional,Sales Executive,Chennai,460626,1,False,False,37.8,False,False
+C0203,57,Other,senior,Consultant,Chennai,1202067,2,False,False,24.9,False,True
+C0204,59,Other,senior,Pensioner,Delhi,445059,2,False,False,26.6,False,False
+C0205,31,Female,family,Doctor,Mumbai,2501832,3,True,False,26.9,True,False
+C0206,25,Male,couple,Software Engineer,Ahmedabad,956972,2,True,True,24.6,True,False
+C0207,38,Female,couple,Manager,Ahmedabad,877448,2,True,False,37.6,False,False
+C0208,32,Other,family,Manager,Bangalore,2861989,3,True,False,24.6,False,False
+C0209,23,Male,young_professional,Sales Executive,Chennai,323839,1,False,False,27.0,False,False
+C0210,41,Male,family,Engineer,Mumbai,1250626,4,True,True,35.4,False,True
+C0211,24,Female,young_professional,Teacher,Mumbai,405797,1,False,False,26.7,False,False
+C0212,37,Other,family,Government Employee,Pune,2863916,3,True,False,33.4,False,False
+C0213,65,Other,senior,Pensioner,Mumbai,596823,2,False,False,37.7,False,False
+C0214,60,Other,senior,Pensioner,Pune,1412802,2,False,False,18.5,False,False
+C0215,43,Female,family,Doctor,Bangalore,1225864,4,True,False,33.0,False,False
+C0216,24,Female,student,Student,Ahmedabad,109185,1,False,False,20.2,False,False
+C0217,21,Female,student,Student,Chennai,13510,1,False,False,31.3,False,False
+C0218,28,Male,young_professional,Software Engineer,Ahmedabad,617915,1,False,False,17.8,False,False
+C0219,61,Female,senior,Pensioner,Hyderabad,931797,1,False,False,33.4,False,False
+C0220,41,Female,couple,Doctor,Pune,1542866,2,False,True,37.6,False,False
+C0221,31,Male,family,Engineer,Hyderabad,2959399,3,True,False,17.8,False,False
+C0222,28,Female,young_professional,Nurse,Hyderabad,541192,1,False,False,34.6,False,False
+C0223,44,Other,family,Manager,Mumbai,1305623,5,True,False,21.0,False,False
+C0224,19,Male,student,Student,Mumbai,12717,1,False,False,26.0,False,False
+C0225,69,Male,senior,Pensioner,Mumbai,882658,1,False,False,31.2,False,False
+C0226,72,Male,senior,Consultant,Kolkata,962639,1,False,True,32.3,False,False
+C0227,19,Male,student,Student,Kolkata,137464,1,False,True,21.4,False,False
+C0228,37,Female,couple,Software Engineer,Delhi,1462588,2,True,False,22.1,False,False
+C0229,42,Other,family,Engineer,Pune,2918197,4,True,True,17.7,False,False
+C0230,18,Other,student,Student,Delhi,60231,1,False,False,35.3,False,False
+C0231,42,Male,couple,Doctor,Kolkata,1681765,2,True,True,34.9,True,False
+C0232,30,Other,couple,Manager,Bangalore,1682706,2,True,False,34.9,False,False
+C0233,23,Male,student,Student,Pune,14076,1,False,True,22.3,True,False
+C0234,39,Other,couple,Manager,Delhi,1528870,2,True,False,36.8,False,False
+C0235,32,Female,couple,Manager,Pune,654154,2,True,False,25.3,False,False
+C0236,19,Female,student,Student,Bangalore,1361,1,False,False,26.6,False,False
+C0237,47,Female,family,Manager,Pune,2926748,5,True,False,18.0,False,False
+C0238,22,Other,student,Student,Bangalore,108477,1,False,False,19.2,False,False
+C0239,35,Female,family,Engineer,Hyderabad,1182337,4,True,False,27.6,True,False
+C0240,23,Male,student,Student,Delhi,65981,1,False,False,32.3,False,False
+C0241,25,Female,couple,Manager,Bangalore,1329826,2,False,False,25.3,False,False
+C0242,31,Female,couple,Manager,Chennai,1504556,2,False,True,25.7,False,False
+C0243,38,Other,family,Manager,Mumbai,2248089,4,True,True,29.1,False,False
+C0244,52,Male,family,Engineer,Ahmedabad,1479329,4,True,False,34.5,True,False
+C0245,32,Other,couple,Manager,Kolkata,1029911,2,True,False,33.7,True,False
+C0246,68,Male,senior,Consultant,Delhi,1240106,1,False,False,24.9,False,False
+C0247,33,Female,young_professional,Sales Executive,Pune,672253,1,False,True,30.1,False,False
+C0248,18,Female,student,Student,Ahmedabad,25849,1,False,False,28.0,False,False
+C0249,44,Other,family,Business Owner,Delhi,2699105,3,True,False,18.0,False,False
+C0250,28,Other,young_professional,Software Engineer,Ahmedabad,627040,1,False,False,33.6,False,False
+C0251,40,Other,family,Business Owner,Bangalore,881749,4,True,True,32.1,True,False
+C0252,31,Male,young_professional,Sales Executive,Bangalore,482927,1,False,False,24.3,False,False
+C0253,42,Female,family,Government Employee,Chennai,722441,5,True,False,21.5,False,False
+C0254,19,Other,student,Student,Pune,140742,1,False,True,24.2,False,False
+C0255,49,Other,family,Doctor,Delhi,2246448,5,True,True,24.7,False,False
+C0256,28,Other,young_professional,Sales Executive,Kolkata,423586,1,False,False,19.9,False,False
+C0257,32,Female,young_professional,Teacher,Bangalore,702349,1,False,False,27.5,False,False
+C0258,29,Male,couple,Manager,Bangalore,892374,2,False,False,30.2,False,False
+C0259,47,Male,family,Engineer,Bangalore,2719960,5,True,False,31.5,False,False
+C0260,55,Other,senior,Consultant,Ahmedabad,562483,2,False,True,22.1,True,False
+C0261,58,Other,senior,Retired,Ahmedabad,1301068,1,False,False,28.6,False,False
+C0262,29,Female,young_professional,Software Engineer,Ahmedabad,407391,1,False,False,30.9,False,False
+C0263,27,Male,couple,Business Owner,Kolkata,1420796,2,True,False,22.4,False,False
+C0264,59,Other,senior,Retired,Pune,533312,1,False,False,29.2,False,False
+C0265,34,Male,couple,Doctor,Kolkata,1701113,2,False,False,28.0,False,False
+C0266,29,Male,couple,Manager,Ahmedabad,778272,2,True,True,24.1,False,False
+C0267,75,Other,senior,Pensioner,Hyderabad,663540,2,False,False,19.0,False,False
+C0268,39,Male,couple,Manager,Pune,1523503,2,False,False,35.3,False,False
+C0269,67,Other,senior,Consultant,Bangalore,556822,2,False,False,27.6,False,False
+C0270,40,Female,family,Government Employee,Ahmedabad,803043,3,True,True,33.6,False,False
+C0271,24,Other,student,Student,Delhi,53036,1,False,False,36.1,False,False
+C0272,33,Other,couple,Doctor,Kolkata,672848,2,False,False,30.8,True,False
+C0273,19,Male,student,Student,Mumbai,284,1,False,False,19.1,False,False
+C0274,28,Female,couple,Software Engineer,Pune,1385656,2,True,False,22.2,True,False
+C0275,29,Female,couple,Architect,Bangalore,1302624,2,True,False,31.4,True,False
+C0276,31,Other,couple,Doctor,Delhi,817454,2,False,False,26.6,False,False
+C0277,41,Other,family,Manager,Hyderabad,2400986,4,True,False,22.6,False,False
+C0278,22,Female,student,Student,Chennai,53856,1,False,False,27.9,False,False
+C0279,33,Male,family,Doctor,Pune,1611170,4,True,False,19.0,False,True
+C0280,48,Other,family,Business Owner,Mumbai,2365229,4,True,False,21.0,False,False
+C0281,18,Female,student,Student,Kolkata,68730,1,False,False,36.4,False,False
+C0282,32,Other,family,Government Employee,Bangalore,2850515,5,True,False,23.2,False,False
+C0283,37,Female,couple,Doctor,Delhi,1729847,2,True,False,26.5,False,False
+C0284,25,Male,student,Student,Mumbai,14425,1,False,False,32.7,False,False
+C0285,41,Male,family,Doctor,Delhi,2793643,5,True,False,32.3,False,False
+C0286,38,Male,couple,Architect,Pune,1070384,2,True,False,37.5,False,False
+C0287,48,Other,family,Business Owner,Chennai,1299951,4,True,True,33.4,False,False
+C0288,55,Male,senior,Retired,Kolkata,192354,1,False,False,27.2,False,True
+C0289,32,Male,couple,Software Engineer,Bangalore,1372953,2,False,False,19.1,False,False
+C0290,56,Male,senior,Retired,Ahmedabad,940800,1,False,False,35.3,False,False
+C0291,31,Male,couple,Doctor,Chennai,1111519,2,False,False,22.5,False,False
+C0292,24,Other,student,Student,Mumbai,6267,1,False,False,24.6,False,False
+C0293,39,Male,family,Government Employee,Hyderabad,1035993,3,True,False,22.4,False,True
+C0294,21,Other,student,Student,Bangalore,136251,1,False,False,35.9,False,False
+C0295,32,Other,family,Doctor,Kolkata,2981612,3,True,False,37.3,False,False
+C0296,35,Male,couple,Software Engineer,Bangalore,1449502,2,False,False,36.8,False,False
+C0297,30,Female,young_professional,Sales Executive,Hyderabad,788694,1,False,False,20.0,False,False
+C0298,28,Male,couple,Doctor,Pune,689626,2,True,False,23.7,False,False
+C0299,21,Female,student,Student,Mumbai,93255,1,False,False,18.5,False,False
+C0300,47,Male,family,Business Owner,Chennai,2907374,3,True,True,19.6,False,False
+C0301,29,Male,young_professional,Software Engineer,Mumbai,690321,1,False,False,36.7,True,False
+C0302,33,Female,young_professional,Software Engineer,Mumbai,764971,1,False,False,19.4,False,False
+C0303,20,Male,student,Student,Pune,113549,1,False,False,25.6,True,False
+C0304,27,Female,young_professional,Nurse,Ahmedabad,593448,1,False,False,20.5,False,False
+C0305,70,Other,senior,Consultant,Chennai,227882,1,False,False,20.3,True,False
+C0306,55,Female,senior,Pensioner,Kolkata,902156,2,False,False,33.5,False,False
+C0307,23,Other,young_professional,Sales Executive,Pune,634367,1,False,False,18.1,False,False
+C0308,25,Other,young_professional,Software Engineer,Chennai,404998,1,False,False,22.4,False,False
+C0309,41,Other,family,Manager,Mumbai,1328601,3,True,False,24.0,False,False
+C0310,29,Male,couple,Doctor,Ahmedabad,1680924,2,True,False,34.1,False,False
+C0311,18,Female,student,Student,Bangalore,60980,1,False,False,17.9,False,False
+C0312,35,Male,young_professional,Software Engineer,Pune,639307,1,False,True,20.5,False,False
+C0313,37,Other,couple,Manager,Ahmedabad,1728966,2,True,False,24.1,False,False
+C0314,30,Male,couple,Business Owner,Bangalore,1678551,2,False,False,29.6,False,False
+C0315,24,Female,student,Student,Delhi,148762,1,False,True,29.8,False,False
+C0316,28,Female,young_professional,Software Engineer,Pune,381586,1,False,False,37.6,False,False
+C0317,22,Female,student,Student,Mumbai,54967,1,False,False,18.9,False,False
+C0318,43,Male,family,Engineer,Chennai,1297673,4,True,False,25.3,False,False
+C0319,32,Other,family,Engineer,Bangalore,740143,4,True,True,22.9,False,False
+C0320,19,Male,student,Student,Kolkata,88591,1,False,False,30.1,False,True
+C0321,19,Female,student,Student,Hyderabad,86794,1,False,False,21.4,False,False
+C0322,24,Male,young_professional,Software Engineer,Kolkata,352046,1,False,False,28.8,False,True
+C0323,40,Female,couple,Software Engineer,Hyderabad,918748,2,True,True,21.0,False,False
+C0324,45,Male,family,Government Employee,Ahmedabad,1711509,3,True,False,25.4,False,False
+C0325,39,Other,couple,Software Engineer,Delhi,1475297,2,False,False,23.0,True,False
+C0326,42,Other,couple,Architect,Ahmedabad,1368192,2,True,False,34.7,False,False
+C0327,30,Male,young_professional,Accountant,Bangalore,613369,1,False,True,36.0,False,False
+C0328,35,Other,family,Engineer,Chennai,1301139,3,True,False,20.1,False,False
+C0329,32,Other,young_professional,Accountant,Kolkata,570413,1,False,False,32.4,False,False
+C0330,33,Female,couple,Manager,Delhi,1589865,2,False,False,17.8,False,False
+C0331,25,Female,young_professional,Accountant,Delhi,894116,1,False,False,33.0,False,False
+C0332,66,Male,senior,Pensioner,Kolkata,961698,2,False,False,27.5,False,True
+C0333,74,Female,senior,Pensioner,Hyderabad,942467,1,False,False,35.5,False,True
+C0334,23,Female,student,Student,Bangalore,79444,1,False,False,34.8,False,False
+C0335,40,Other,family,Engineer,Ahmedabad,1730029,5,True,False,30.7,False,False
+C0336,26,Male,couple,Architect,Mumbai,1580598,2,True,True,32.0,False,False
+C0337,26,Female,young_professional,Nurse,Pune,360426,1,False,False,26.9,False,False
+C0338,67,Female,senior,Pensioner,Pune,1432550,1,False,False,22.5,False,False
+C0339,27,Other,young_professional,Teacher,Chennai,394782,1,False,False,25.4,False,False
+C0340,33,Male,young_professional,Software Engineer,Ahmedabad,516773,1,False,False,25.9,True,False
+C0341,32,Female,young_professional,Nurse,Kolkata,308874,1,False,False,30.0,False,False
+C0342,39,Other,couple,Software Engineer,Mumbai,1028479,2,True,False,31.4,False,False
+C0343,42,Female,couple,Business Owner,Hyderabad,1745231,2,False,False,19.7,True,False
+C0344,31,Other,couple,Business Owner,Bangalore,814424,2,True,False,34.0,False,False
+C0345,25,Other,student,Student,Pune,77490,1,False,False,26.1,False,True
+C0346,33,Other,young_professional,Nurse,Bangalore,860605,1,False,False,27.3,False,False
+C0347,60,Other,senior,Retired,Pune,716109,1,False,False,32.7,False,False
+C0348,21,Other,student,Student,Hyderabad,93135,1,False,False,35.4,False,False
+C0349,39,Other,couple,Manager,Chennai,747005,2,False,True,30.5,False,False
+C0350,24,Female,student,Student,Pune,138893,1,False,False,18.6,False,False
+C0351,69,Other,senior,Retired,Pune,400362,2,False,False,21.2,True,False
+C0352,18,Male,student,Student,Delhi,118503,1,False,False,33.1,False,False
+C0353,68,Male,senior,Retired,Pune,1428519,2,False,False,37.3,False,True
+C0354,41,Male,couple,Business Owner,Hyderabad,899668,2,True,False,30.3,False,False
+C0355,24,Other,student,Student,Ahmedabad,131946,1,False,False,20.9,False,False
+C0356,74,Male,senior,Pensioner,Pune,1199154,2,False,False,31.6,True,False
+C0357,35,Male,young_professional,Software Engineer,Bangalore,722986,1,False,True,22.1,False,False
+C0358,26,Male,couple,Software Engineer,Mumbai,1286835,2,False,False,30.3,False,True
+C0359,24,Female,student,Student,Hyderabad,116474,1,False,False,28.7,False,False
+C0360,22,Male,student,Student,Delhi,35956,1,False,False,35.9,False,False
+C0361,36,Other,family,Government Employee,Mumbai,1437809,4,True,False,37.4,False,False
+C0362,36,Male,family,Manager,Ahmedabad,2616050,4,True,False,17.8,True,False
+C0363,19,Male,student,Student,Ahmedabad,26552,1,False,False,30.7,False,False
+C0364,20,Male,student,Student,Delhi,10340,1,False,False,24.9,False,False
+C0365,20,Female,student,Student,Pune,44698,1,False,False,35.8,False,False
+C0366,24,Other,young_professional,Sales Executive,Kolkata,720245,1,False,False,26.9,False,False
+C0367,24,Other,young_professional,Sales Executive,Ahmedabad,438948,1,False,False,18.7,False,False
+C0368,35,Female,family,Government Employee,Ahmedabad,2192790,4,True,False,35.2,False,False
+C0369,24,Other,student,Student,Pune,115523,1,False,True,22.9,False,False
+C0370,74,Other,senior,Pensioner,Bangalore,299737,2,False,False,22.6,False,False
+C0371,56,Male,senior,Pensioner,Pune,124421,1,False,False,27.1,False,True
+C0372,33,Male,couple,Manager,Ahmedabad,605593,2,True,False,25.3,False,True
+C0373,44,Male,family,Business Owner,Mumbai,1925658,3,True,False,32.8,True,False
+C0374,74,Male,senior,Pensioner,Pune,1437014,2,False,False,29.0,False,False
+C0375,30,Male,young_professional,Sales Executive,Delhi,648098,1,False,False,30.2,False,False
+C0376,23,Male,young_professional,Nurse,Delhi,657938,1,False,False,30.5,False,False
+C0377,30,Male,young_professional,Teacher,Chennai,447271,1,False,False,32.7,False,False
+C0378,36,Female,family,Manager,Delhi,2516989,3,True,False,19.7,False,False
+C0379,51,Other,family,Engineer,Ahmedabad,2714757,3,True,False,17.6,False,False
+C0380,34,Female,young_professional,Nurse,Kolkata,482085,1,False,False,20.1,False,False
+C0381,62,Other,senior,Pensioner,Hyderabad,673772,2,False,False,37.4,False,True
+C0382,65,Other,senior,Consultant,Bangalore,1260944,1,False,False,30.3,True,False
+C0383,31,Other,young_professional,Sales Executive,Kolkata,868843,1,False,False,24.1,False,False
+C0384,64,Male,senior,Retired,Hyderabad,985808,1,False,False,18.0,True,False
+C0385,33,Other,couple,Manager,Delhi,807082,2,True,False,23.6,False,True
+C0386,62,Female,senior,Consultant,Mumbai,1457107,2,False,False,33.6,False,False
+C0387,43,Other,family,Engineer,Chennai,1911365,5,True,True,32.7,False,False
+C0388,42,Male,couple,Software Engineer,Bangalore,1765394,2,True,False,37.3,False,False
+C0389,58,Female,senior,Pensioner,Mumbai,891042,1,False,False,28.9,True,False
+C0390,52,Female,family,Manager,Hyderabad,1249302,3,True,True,24.1,True,False
+C0391,72,Female,senior,Retired,Bangalore,850959,1,False,False,24.0,True,True
+C0392,72,Other,senior,Pensioner,Chennai,946026,1,False,False,35.6,False,False
+C0393,70,Male,senior,Consultant,Chennai,1277204,1,False,True,24.6,True,False
+C0394,37,Female,couple,Business Owner,Ahmedabad,737762,2,False,False,32.3,True,False
+C0395,22,Male,student,Student,Delhi,50465,1,False,False,19.2,True,False
+C0396,33,Other,young_professional,Sales Executive,Delhi,744815,1,False,False,21.7,False,False
+C0397,23,Other,young_professional,Nurse,Delhi,781532,1,False,False,18.3,True,False
+C0398,27,Other,young_professional,Software Engineer,Mumbai,727433,1,False,False,30.4,False,True
+C0399,57,Other,senior,Consultant,Hyderabad,1328109,1,False,False,19.0,False,True
+C0400,22,Other,student,Student,Bangalore,114734,1,False,False,34.4,True,False
+C0401,47,Other,family,Doctor,Mumbai,1837229,5,True,True,31.4,False,False
+C0402,59,Other,senior,Pensioner,Chennai,358442,1,False,True,29.7,False,False
+C0403,31,Other,couple,Doctor,Mumbai,1365399,2,True,True,22.0,False,False
+C0404,50,Female,family,Engineer,Pune,2905460,3,True,False,18.9,True,False
+C0405,33,Other,young_professional,Sales Executive,Pune,545925,1,False,True,30.2,False,False
+C0406,29,Female,couple,Doctor,Kolkata,1686048,2,False,False,37.2,False,False
+C0407,29,Female,couple,Doctor,Delhi,1195337,2,False,False,24.9,False,False
+C0408,31,Other,young_professional,Software Engineer,Mumbai,505973,1,False,False,35.7,True,True
+C0409,67,Female,senior,Pensioner,Bangalore,1337395,1,False,False,28.8,False,False
+C0410,37,Other,family,Government Employee,Bangalore,1820538,3,True,False,28.0,False,False
+C0411,30,Male,young_professional,Sales Executive,Pune,466956,1,False,True,36.9,False,False
+C0412,35,Female,young_professional,Accountant,Pune,811329,1,False,False,22.9,False,False
+C0413,44,Other,family,Doctor,Hyderabad,794772,3,True,False,24.1,False,False
+C0414,73,Female,senior,Consultant,Hyderabad,464589,2,False,False,25.0,False,False
+C0415,31,Other,young_professional,Accountant,Mumbai,725556,1,False,False,35.3,False,False
+C0416,30,Other,young_professional,Teacher,Pune,473650,1,False,False,28.0,False,False
+C0417,21,Other,student,Student,Bangalore,108688,1,False,False,32.3,False,False
+C0418,30,Male,family,Manager,Bangalore,1622027,3,True,True,29.6,False,False
+C0419,27,Male,young_professional,Nurse,Delhi,488783,1,False,False,25.8,False,False
+C0420,49,Male,family,Government Employee,Hyderabad,2577251,4,True,True,34.5,False,False
+C0421,39,Male,couple,Architect,Kolkata,1751021,2,True,False,25.4,False,False
+C0422,58,Female,senior,Retired,Delhi,472081,2,False,False,29.8,False,False
+C0423,32,Female,young_professional,Accountant,Kolkata,865482,1,False,False,35.9,False,False
+C0424,24,Male,student,Student,Kolkata,60158,1,False,False,27.4,False,False
+C0425,40,Other,couple,Software Engineer,Delhi,987614,2,True,False,35.5,False,False
+C0426,24,Other,student,Student,Hyderabad,53849,1,False,False,24.0,False,False
+C0427,48,Male,family,Manager,Ahmedabad,2133622,5,True,False,31.5,False,False
+C0428,42,Other,couple,Doctor,Delhi,1663733,2,False,False,23.8,False,False
+C0429,30,Male,young_professional,Accountant,Mumbai,469654,1,False,True,27.9,False,False
+C0430,50,Female,family,Doctor,Chennai,622190,3,True,False,27.2,False,False
+C0431,18,Other,student,Student,Bangalore,100748,1,False,False,25.7,False,False
+C0432,44,Other,family,Manager,Chennai,644922,3,True,False,36.6,False,False
+C0433,33,Female,young_professional,Nurse,Kolkata,337812,1,False,False,30.9,False,False
+C0434,42,Female,family,Manager,Pune,1440162,5,True,True,31.9,False,False
+C0435,32,Other,couple,Architect,Delhi,1771636,2,True,False,25.8,True,False
+C0436,22,Female,student,Student,Ahmedabad,89120,1,False,False,34.0,False,False
+C0437,70,Male,senior,Retired,Ahmedabad,610180,2,False,False,26.9,False,False
+C0438,27,Other,couple,Architect,Mumbai,1302523,2,True,False,22.2,False,False
+C0439,32,Female,couple,Doctor,Ahmedabad,1102489,2,True,False,32.9,False,False
+C0440,31,Other,couple,Doctor,Chennai,1703162,2,False,True,32.8,False,False
+C0441,27,Male,young_professional,Software Engineer,Delhi,516823,1,False,False,34.6,False,False
+C0442,49,Female,family,Manager,Hyderabad,627781,5,True,False,34.9,False,False
+C0443,35,Other,young_professional,Sales Executive,Ahmedabad,835962,1,False,False,22.1,False,True
+C0444,23,Other,student,Student,Pune,103210,1,False,False,33.4,False,False
+C0445,18,Male,student,Student,Hyderabad,55247,1,False,False,19.6,False,False
+C0446,40,Female,couple,Business Owner,Pune,1785730,2,False,False,27.7,False,False
+C0447,39,Female,couple,Doctor,Kolkata,877255,2,True,False,31.6,False,False
+C0448,25,Female,young_professional,Accountant,Pune,456812,1,False,False,17.7,False,False
+C0449,33,Female,couple,Manager,Delhi,1678889,2,True,False,31.7,True,False
+C0450,33,Other,couple,Software Engineer,Pune,1256992,2,False,False,36.6,False,True
+C0451,61,Male,senior,Consultant,Ahmedabad,1309750,1,False,False,23.3,False,False
+C0452,49,Other,family,Doctor,Kolkata,1801766,4,True,False,20.5,True,False
+C0453,73,Other,senior,Consultant,Hyderabad,948869,1,False,True,24.5,False,False
+C0454,38,Other,family,Business Owner,Bangalore,2466039,4,True,False,28.2,False,False
+C0455,33,Male,young_professional,Software Engineer,Delhi,563871,1,False,False,31.9,True,False
+C0456,47,Male,family,Manager,Bangalore,825760,3,True,False,28.2,False,False
+C0457,39,Male,family,Government Employee,Mumbai,1561988,3,True,False,26.6,False,False
+C0458,35,Other,couple,Architect,Bangalore,1498568,2,False,False,28.6,False,False
+C0459,69,Male,senior,Consultant,Chennai,1423402,2,False,False,30.6,False,False
+C0460,39,Female,family,Government Employee,Pune,2134206,4,True,False,23.7,True,False
+C0461,47,Other,family,Engineer,Hyderabad,634884,5,True,False,36.9,False,True
+C0462,35,Other,young_professional,Teacher,Bangalore,307568,1,False,False,21.4,False,False
+C0463,42,Female,family,Manager,Hyderabad,1525231,4,True,True,30.3,False,False
+C0464,63,Female,senior,Consultant,Ahmedabad,965922,1,False,False,21.2,True,False
+C0465,70,Female,senior,Retired,Hyderabad,493823,2,False,True,18.5,False,True
+C0466,34,Female,young_professional,Nurse,Kolkata,759713,1,False,False,22.3,False,False
+C0467,41,Female,family,Business Owner,Hyderabad,2544833,5,True,False,24.3,False,False
+C0468,25,Female,student,Student,Chennai,47606,1,False,True,34.8,False,False
+C0469,37,Other,family,Engineer,Kolkata,740552,3,True,False,33.3,False,False
+C0470,35,Female,couple,Business Owner,Chennai,832632,2,True,False,28.8,False,False
+C0471,21,Male,student,Student,Kolkata,29603,1,False,False,26.4,True,False
+C0472,18,Other,student,Student,Delhi,124589,1,False,False,20.7,False,False
+C0473,65,Male,senior,Retired,Ahmedabad,1410997,1,False,True,30.7,False,False
+C0474,42,Female,couple,Business Owner,Mumbai,1228378,2,False,False,17.9,False,False
+C0475,47,Other,family,Engineer,Hyderabad,1836122,5,True,False,21.4,True,False
+C0476,60,Other,senior,Consultant,Kolkata,244444,1,False,False,34.3,False,False
+C0477,23,Male,young_professional,Accountant,Kolkata,681760,1,False,False,22.4,False,False
+C0478,70,Male,senior,Consultant,Delhi,1256511,1,False,False,24.1,False,True
+C0479,25,Other,young_professional,Sales Executive,Ahmedabad,332792,1,False,False,27.5,True,False
+C0480,73,Male,senior,Retired,Ahmedabad,636742,1,False,False,29.9,True,False
+C0481,50,Other,family,Business Owner,Hyderabad,854595,4,True,False,36.7,False,False
+C0482,19,Male,student,Student,Kolkata,79666,1,False,True,21.9,False,False
+C0483,31,Other,young_professional,Software Engineer,Pune,560846,1,False,False,36.9,False,False
+C0484,52,Female,family,Government Employee,Ahmedabad,2391282,3,True,True,21.2,False,False
+C0485,42,Female,couple,Doctor,Chennai,1180849,2,False,False,30.5,False,False
+C0486,63,Other,senior,Consultant,Mumbai,854992,2,False,False,25.6,False,False
+C0487,27,Male,young_professional,Nurse,Bangalore,306887,1,False,False,22.0,False,True
+C0488,25,Male,student,Student,Hyderabad,93233,1,False,True,22.9,False,False
+C0489,67,Other,senior,Consultant,Delhi,1293415,1,False,False,32.3,False,True
+C0490,26,Male,couple,Manager,Kolkata,1708554,2,False,True,18.6,False,False
+C0491,34,Female,young_professional,Nurse,Bangalore,311989,1,False,False,30.5,True,False
+C0492,62,Male,senior,Consultant,Delhi,421278,1,False,False,37.9,False,False
+C0493,39,Male,family,Engineer,Hyderabad,2253908,3,True,True,19.2,False,True
+C0494,46,Other,family,Manager,Chennai,2422387,5,True,True,20.3,False,False
+C0495,71,Other,senior,Retired,Delhi,616414,1,False,True,33.4,False,False
+C0496,43,Other,family,Government Employee,Pune,2132043,4,True,True,24.6,False,False
+C0497,49,Other,family,Business Owner,Delhi,1211607,4,True,True,34.3,True,False
+C0498,21,Female,student,Student,Hyderabad,38712,1,False,False,34.3,True,False
+C0499,30,Other,family,Manager,Ahmedabad,1991991,3,True,False,21.8,False,False
+C0500,34,Male,young_professional,Software Engineer,Hyderabad,319281,1,False,False,36.1,False,False
