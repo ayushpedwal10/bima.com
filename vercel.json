@@ -6,5 +6,11 @@
     "api.py": {
       "excludeFiles": "{app.py,health-advisor/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    }
+  ]
 }
