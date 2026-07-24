@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# JavaScript build and dependency output
+health-advisor/node_modules/
+health-advisor/dist/
+
+# Local configuration and deployment state
+.env
+.env.*
+.vercel/
