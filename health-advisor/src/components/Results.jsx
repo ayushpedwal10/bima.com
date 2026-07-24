@@ -73,11 +73,21 @@ export default function Results({ results, onReset, mode }) {
   const [pdfLoading,   setPdfLoading]   = useState(false)
   const [showGlossary, setShowGlossary] = useState(false)
   const [sidebarOpen,  setSidebarOpen]  = useState(false) // mobile sidebar
+  const [shortlistIds, setShortlistIds] = useState([])
+  const [compareShortlist, setCompareShortlist] = useState(false)
 
   const { ranked, premiumMap, profile } = results
   const best   = ranked[0]
   const bestPr = premiumMap[best.policy.id]
   const pb     = PRIORITY_BADGE[profile.priority] || PRIORITY_BADGE.claims
+  const shortlisted = ranked.filter(item => shortlistIds.includes(item.policy.id))
+
+  function toggleShortlist(policyId) {
+    setShortlistIds(current => {
+      if (current.includes(policyId)) return current.filter(id => id !== policyId)
+      return current.length < 3 ? [...current, policyId] : current
+    })
+  }
 
   async function handleDownloadPDF() {
     setPdfLoading(true)
@@ -191,7 +201,10 @@ export default function Results({ results, onReset, mode }) {
                     </p>
                     <div className="space-y-0.5">
                       {group.items.map(item => (
-                        <button key={item.id} onClick={() => goTab(item.id)}
+                        <button key={item.id} onClick={() => {
+                          if (item.id === 11) setCompareShortlist(false)
+                          goTab(item.id)
+                        }}
                           className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all ${
                             tab === item.id
                               ? "bg-blue-600 text-white shadow-sm"
@@ -285,11 +298,38 @@ export default function Results({ results, onReset, mode }) {
                     ))}
                   </div>
 
+                  {shortlisted.length > 0 && (
+                    <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-3 sm:p-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div>
+                          <p className="text-sm font-black text-blue-900">Your shortlist <span className="text-blue-500">({shortlisted.length}/3)</span></p>
+                          <p className="text-xs text-blue-700/70 mt-0.5">Keep the plans you want to decide between.</p>
+                        </div>
+                        <button onClick={() => { setCompareShortlist(true); goTab(11) }}
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/20">
+                          Compare shortlist →
+                        </button>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {shortlisted.map(item => (
+                          <button key={item.policy.id} onClick={() => toggleShortlist(item.policy.id)}
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-blue-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-red-200 hover:text-red-600 transition-colors">
+                            {item.policy.name}
+                            <span className="text-slate-400">×</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Cards */}
                   {ranked.slice(0, 5).map((r, i) => (
                     <div key={r.policy.id} className="fade-up" style={{ animationDelay: `${i * 50}ms` }}>
                       <PolicyCard ranked={r} rank={i} pr={premiumMap[r.policy.id]}
-                        onInspect={() => { setSelPolicy(r.policy.id); goTab(6) }} />
+                        onInspect={() => { setSelPolicy(r.policy.id); goTab(6) }}
+                        isShortlisted={shortlistIds.includes(r.policy.id)}
+                        onToggleShortlist={() => toggleShortlist(r.policy.id)}
+                        shortlistFull={shortlistIds.length >= 3} />
                     </div>
                   ))}
 
@@ -327,7 +367,12 @@ export default function Results({ results, onReset, mode }) {
               {tab === 8  && <TaxCalculator profile={profile} premiumMap={premiumMap} ranked={ranked} />}
               {tab === 9  && <PremiumAgeChart ranked={ranked} profile={profile} premiumMap={premiumMap} />}
               {tab === 10 && <UpgradeChecker ranked={ranked} profile={profile} premiumMap={premiumMap} />}
-              {tab === 11 && <CompareTable ranked={ranked} premiumMap={premiumMap} mode={mode} profile={profile} />}
+              {tab === 11 && <CompareTable
+                ranked={compareShortlist && shortlisted.length ? shortlisted : ranked}
+                premiumMap={premiumMap}
+                mode={mode}
+                profile={profile}
+                comparisonLabel={compareShortlist && shortlisted.length ? "Shortlisted" : "All"} />}
               {tab === 12 && <EmployerCoverChecker profile={profile} ranked={ranked} premiumMap={premiumMap} />}
               {tab === 13 && <AIInsights profile={profile} ranked={ranked} premiumMap={premiumMap} />}
             </div>

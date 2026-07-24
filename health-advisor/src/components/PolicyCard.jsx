@@ -57,7 +57,7 @@ function MarketBenchmarkStrip({ annual, coverageLakhs }) {
   )
 }
 
-export default function PolicyCard({ ranked, rank, pr, onInspect }) {
+export default function PolicyCard({ ranked, rank, pr, onInspect, isShortlisted, onToggleShortlist, shortlistFull }) {
   const [open, setOpen] = useState(false)
   const { policy, score, reasons, warnings } = ranked
   const f = policy.features
@@ -80,6 +80,20 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
           {rc.label}
         </span>
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={onToggleShortlist}
+            disabled={shortlistFull && !isShortlisted}
+            aria-pressed={isShortlisted}
+            title={shortlistFull && !isShortlisted ? "You can compare up to 3 plans" : "Add to shortlist"}
+            className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[11px] font-bold transition-all ${
+              isShortlisted
+                ? "border-blue-200 bg-blue-50 text-blue-700"
+                : "border-slate-200 bg-white text-slate-500 hover:border-blue-300 hover:text-blue-600"
+            } disabled:cursor-not-allowed disabled:opacity-40`}>
+            <span>{isShortlisted ? "★" : "☆"}</span>
+            <span className="hidden sm:inline">{isShortlisted ? "Shortlisted" : "Shortlist"}</span>
+          </button>
           <span className="text-[10px] text-slate-400 font-semibold flex items-center gap-1">
             Match Score <Tooltip term="Match Score" />
           </span>

@@ -17,7 +17,7 @@ function SortIcon({ active, asc }) {
   return <span className="ml-0.5 text-blue-600 text-xs font-black">{asc ? "↑" : "↓"}</span>
 }
 
-export default function CompareTable({ ranked, premiumMap, mode, profile }) {
+export default function CompareTable({ ranked, premiumMap, mode, profile, comparisonLabel = "All" }) {
   const [sortKey,  setSortKey]  = useState("rank")
   const [sortAsc,  setSortAsc]  = useState(false)
 
@@ -93,7 +93,7 @@ export default function CompareTable({ ranked, premiumMap, mode, profile }) {
     <div>
       <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
         <p className="text-sm text-slate-500">
-          All <strong className="text-slate-700">{ranked.length} policies</strong>
+          {comparisonLabel} <strong className="text-slate-700">{ranked.length} {ranked.length === 1 ? "policy" : "policies"}</strong>
           <span className="text-slate-400"> — click any column header to sort</span>
         </p>
         <div className="flex items-center gap-2">
