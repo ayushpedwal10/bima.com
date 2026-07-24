@@ -4,13 +4,8 @@
   "outputDirectory": "health-advisor/dist",
   "functions": {
     "api.py": {
-      "excludeFiles": "{app.py,health-advisor/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
+      "includeFiles": "health-advisor/dist/**",
+      "excludeFiles": "{app.py,health-advisor/src/**,health-advisor/node_modules/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ]
+  }
 }

@@ -15,7 +15,7 @@ The React frontend (via Vite proxy) calls /api/quote automatically.
 Falls back to the built-in JS engine if this server is not running.
 """
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import json
 import os
@@ -38,6 +38,20 @@ frontend_url = os.environ.get("FRONTEND_URL")
 if frontend_url:
     cors_origins.append(frontend_url)
 CORS(app, origins=cors_origins)
+
+FRONTEND_DIST = Path(__file__).parent / "health-advisor" / "dist"
+
+
+@app.get("/")
+def frontend():
+    """Serve the compiled React app from the same Vercel Function."""
+    return send_from_directory(FRONTEND_DIST, "index.html")
+
+
+@app.get("/assets/<path:asset_path>")
+def frontend_assets(asset_path: str):
+    """Serve Vite's hashed JavaScript, CSS, and other static assets."""
+    return send_from_directory(FRONTEND_DIST / "assets", asset_path)
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
