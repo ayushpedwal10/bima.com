@@ -54,6 +54,18 @@ def frontend_assets(asset_path: str):
     return send_from_directory(FRONTEND_DIST / "assets", asset_path)
 
 
+@app.get("/<path:static_path>")
+def frontend_static(static_path: str):
+    """Serve public PWA files and fall back to the React entry page."""
+    if static_path.startswith("api/"):
+        return jsonify({"error": "Not found"}), 404
+
+    candidate = FRONTEND_DIST / static_path
+    if candidate.is_file():
+        return send_from_directory(FRONTEND_DIST, static_path)
+    return send_from_directory(FRONTEND_DIST, "index.html")
+
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 def _map_frontend_profile(body: dict) -> dict:

@@ -24,30 +24,30 @@ export default function Step2({ data, update }) {
   const pct  = ((data.bmi - 15) / (45 - 15)) * 100   // 0–100%
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
 
       {/* header */}
       <div>
         <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Step 2 of 3</p>
-        <h2 className="text-3xl font-black text-slate-900 leading-tight">Your Health Profile</h2>
+        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">Your Health Profile</h2>
         <p className="text-slate-400 mt-1.5">These factors directly affect your <span className="font-semibold text-slate-600">premium <Tooltip term="Premium" /></span> — we'll show the exact rupee impact.</p>
       </div>
 
       {/* ── BMI card ── */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {/* top bar with current value */}
-        <div className="flex items-center justify-between px-6 pt-6 pb-5"
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-4 sm:px-6 pt-5 sm:pt-6 pb-5"
           style={{ borderBottom: `1px solid ${zone.border}`, background: zone.bg }}>
           <div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Body Mass Index (BMI)</p>
-            <p className="text-6xl font-black tabular-nums leading-none" style={{ color: zone.color }}>{data.bmi}</p>
+            <p className="text-5xl sm:text-6xl font-black tabular-nums leading-none" style={{ color: zone.color }}>{data.bmi}</p>
           </div>
-          <div className="text-right">
+          <div className="text-left sm:text-right">
             <span className={`inline-block text-sm font-bold px-4 py-2 rounded-full border ${zone.pill}`}>
               {zone.label}
             </span>
             {data.bmi >= 25 && (
-              <p className="text-xs text-slate-500 mt-2 max-w-[160px] text-right leading-relaxed">
+              <p className="text-xs text-slate-500 mt-2 max-w-[160px] text-left sm:text-right leading-relaxed">
                 Reaching BMI 18.5–24.9 could reduce your loading by <strong>10–25%</strong>
               </p>
             )}
@@ -55,7 +55,7 @@ export default function Step2({ data, update }) {
         </div>
 
         {/* slider area */}
-        <div className="px-6 pb-6 pt-5">
+        <div className="px-4 sm:px-6 pb-6 pt-5">
           {/* colour track + draggable thumb */}
           <div className="relative h-8 mb-1 select-none">
             {/* colour segments — pointer-events-none */}
@@ -111,12 +111,12 @@ export default function Step2({ data, update }) {
         <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Risk Factors
           <span className="ml-2 normal-case font-normal text-slate-400">— select all that apply</span>
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {RISK_FACTORS.map(({ key, icon, label, sub, badge }) => {
             const on = !!data[key]
             return (
               <label key={key}
-                className={`flex items-start gap-4 p-5 rounded-2xl border-2 cursor-pointer select-none transition-all duration-150 ${
+                className={`flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border-2 cursor-pointer select-none transition-all duration-150 ${
                   on
                     ? "border-blue-500 bg-blue-50 shadow-sm"
                     : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"

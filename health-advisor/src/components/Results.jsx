@@ -150,7 +150,7 @@ export default function Results({ results, onReset, mode }) {
       </div>
 
       {/* ── Body: sidebar + content ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex gap-6 items-start">
 
           {/* ── Sidebar nav ── */}
@@ -247,11 +247,11 @@ export default function Results({ results, onReset, mode }) {
             </div>
 
             {/* Tab content */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6">
               {tab === 0 && (
                 <div className="space-y-4">
                   {/* Mini hero strip */}
-                  <div className="flex items-center justify-between gap-4 p-4 rounded-2xl text-white mb-2"
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 rounded-2xl text-white mb-2"
                     style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%)" }}>
                     <div className="flex items-center gap-3 min-w-0">
                       <InsurerLogo provider={best.policy.provider} size="lg" />
@@ -261,8 +261,8 @@ export default function Results({ results, onReset, mode }) {
                         <p className="text-blue-200 text-xs">{best.policy.provider}</p>
                       </div>
                     </div>
-                    <div className="text-right flex-shrink-0">
-                      <p className="text-3xl font-black">₹{bestPr.monthly.toLocaleString()}</p>
+                    <div className="text-left sm:text-right flex-shrink-0">
+                      <p className="text-2xl sm:text-3xl font-black">₹{bestPr.monthly.toLocaleString()}</p>
                       <p className="text-blue-200 text-xs">/month · Score {best.score}/100</p>
                     </div>
                   </div>

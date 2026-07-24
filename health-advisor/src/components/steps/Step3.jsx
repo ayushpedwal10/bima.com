@@ -42,12 +42,12 @@ export default function Step3({ data, update, mode }) {
       {/* header */}
       <div>
         <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Step 3 of 3</p>
-        <h2 className="text-3xl font-black text-slate-900 leading-tight">What do you need covered?</h2>
+        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">What do you need covered?</h2>
         <p className="text-slate-400 mt-1.5">Select your coverage needs, then tell us what matters most.</p>
       </div>
 
       {/* ── Coverage needs ── */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6">
         <div className="flex items-center justify-between mb-5">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Coverage Needs</p>
           {selectedCount > 0 && (
@@ -56,7 +56,7 @@ export default function Step3({ data, update, mode }) {
             </span>
           )}
         </div>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {NEEDS.map(n => {
             const on = !!data[n.key]
             return (
@@ -100,9 +100,9 @@ export default function Step3({ data, update, mode }) {
       </div>
 
       {/* ── Priority ── */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6">
         <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">What Matters Most?</p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {PRIORITIES.map(p => {
             const sel = data.priority === p.key
             return (

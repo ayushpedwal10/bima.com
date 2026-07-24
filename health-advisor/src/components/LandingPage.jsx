@@ -30,7 +30,7 @@ export default function LandingPage({ onStart }) {
     <div className="min-h-[calc(100vh-60px)] bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 overflow-hidden">
 
       {/* ── Hero ── */}
-      <section className="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center relative">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-10 sm:pb-12 text-center relative">
 
         {/* Background blur blobs */}
         <div className="absolute top-8 left-1/4 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl pointer-events-none" />
@@ -44,7 +44,7 @@ export default function LandingPage({ onStart }) {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl font-black text-slate-900 leading-[1.08] tracking-tight mb-5 fade-up" style={{ animationDelay: "60ms" }}>
+          <h1 className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.08] tracking-tight mb-5 fade-up" style={{ animationDelay: "60ms" }}>
             Find the right<br/>
             <span className="gradient-text">health insurance</span><br/>
             in 3 minutes.
@@ -80,8 +80,8 @@ export default function LandingPage({ onStart }) {
       </section>
 
       {/* ── Stats strip ── */}
-      <section className="max-w-3xl mx-auto px-6 pb-14">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 fade-up" style={{ animationDelay: "300ms" }}>
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-12 sm:pb-14">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 fade-up" style={{ animationDelay: "300ms" }}>
           {STATS.map((s, i) => (
             <div key={i} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="text-2xl mb-2">{s.icon}</div>
@@ -93,7 +93,7 @@ export default function LandingPage({ onStart }) {
       </section>
 
       {/* ── What you get ── */}
-      <section className="max-w-5xl mx-auto px-6 pb-16">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-14 sm:pb-16">
         <div className="text-center mb-8 fade-up">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Everything included · Free</p>
           <h2 className="text-2xl font-black text-slate-900">More than just a plan picker</h2>
@@ -118,8 +118,8 @@ export default function LandingPage({ onStart }) {
       </section>
 
       {/* ── How it works ── */}
-      <section className="max-w-3xl mx-auto px-6 pb-20">
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm fade-up">
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 sm:pb-20">
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-sm fade-up">
           <h2 className="text-xl font-black text-slate-900 text-center mb-8">How it works</h2>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             {[

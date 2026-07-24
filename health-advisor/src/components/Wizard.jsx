@@ -132,7 +132,7 @@ export default function Wizard({ onSubmit, mode }) {
             }
           }}>
           <div key={animKey}
-            className={`min-h-full px-6 py-8 lg:px-10 lg:py-10 ${dir === "forward" ? "step-enter-forward" : "step-enter-backward"}`}>
+            className={`min-h-full px-4 sm:px-6 py-6 sm:py-8 lg:px-10 lg:py-10 ${dir === "forward" ? "step-enter-forward" : "step-enter-backward"}`}>
             {step === 0 && <Step1 data={data} update={update} mode={mode} />}
             {step === 1 && <Step2 data={data} update={update} />}
             {step === 2 && <Step3 data={data} update={update} mode={mode} />}
@@ -140,7 +140,7 @@ export default function Wizard({ onSubmit, mode }) {
         </div>
 
         {/* bottom nav */}
-        <div className="flex-shrink-0 bg-white border-t border-slate-200 px-6 lg:px-10 py-4">
+        <div className="flex-shrink-0 bg-white border-t border-slate-200 px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <button onClick={goBack} disabled={step === 0}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-sm font-semibold
@@ -163,7 +163,7 @@ export default function Wizard({ onSubmit, mode }) {
 
             {step < STEPS.length - 1
               ? <button onClick={goNext}
-                  className="inline-flex items-center gap-2 px-7 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-bold
+                  className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-bold
                     hover:bg-blue-700 active:scale-[0.98] transition-all shadow-md shadow-blue-600/25">
                   Continue
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -171,7 +171,7 @@ export default function Wizard({ onSubmit, mode }) {
                   </svg>
                 </button>
               : <button onClick={() => onSubmit(data)}
-                  className="inline-flex items-center gap-2 px-7 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-bold
+                  className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-bold
                     hover:bg-emerald-700 active:scale-[0.98] transition-all shadow-md shadow-emerald-600/25">
                   Find My Plans
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

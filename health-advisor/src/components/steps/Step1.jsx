@@ -77,12 +77,12 @@ export default function Step1({ data, update, mode }) {
   const budgetIdx  = BUDGET_STEPS.reduce((b, v, i) => Math.abs(v - data.budget) < Math.abs(BUDGET_STEPS[b] - data.budget) ? i : b, 0)
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
 
       {/* header */}
       <div>
         <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Step 1 of 3</p>
-        <h2 className="text-3xl font-black text-slate-900 leading-tight">Who are you buying for?</h2>
+        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">Who are you buying for?</h2>
         <p className="text-slate-400 mt-1.5">Pick your life stage — we'll tailor every recommendation to fit.</p>
       </div>
 
@@ -97,13 +97,13 @@ export default function Step1({ data, update, mode }) {
       </div>
 
       {/* ── Life stage tiles ── */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4">
         {SEGMENTS.map(s => {
           const sel = active === s.id
           return (
             <button key={s.id} type="button" onClick={() => selectSegment(s.id)}
               style={sel ? { background: s.bg, borderColor: s.border } : {}}
-              className={`relative flex flex-col items-center text-center gap-3 py-6 px-3 rounded-2xl border-2 transition-all duration-150 ${
+              className={`relative flex flex-col items-center text-center gap-2 sm:gap-3 py-4 sm:py-6 px-2 sm:px-3 rounded-2xl border-2 transition-all duration-150 ${
                 sel
                   ? "shadow-md"
                   : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
@@ -117,7 +117,7 @@ export default function Step1({ data, update, mode }) {
                   </svg>
                 </div>
               )}
-              <span className="text-4xl leading-none">{s.icon}</span>
+              <span className="text-3xl sm:text-4xl leading-none">{s.icon}</span>
               <div>
                 <p className="text-sm font-bold leading-tight" style={sel ? { color: s.text } : { color: "#334155" }}>
                   {s.label}
@@ -131,11 +131,11 @@ export default function Step1({ data, update, mode }) {
 
       {/* ── Details card ── */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm">
-        <div className="px-6 pt-5 pb-1">
+        <div className="px-4 sm:px-6 pt-5 pb-1">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Personal Details</p>
         </div>
 
-        <div className="p-6 grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
           <Field>
             <Label hint="18 – 80">Age</Label>
             <NumberInput min={18} max={80} value={data.age} onChange={e => update({ age: +e.target.value })} />
@@ -160,14 +160,14 @@ export default function Step1({ data, update, mode }) {
             <NumberInput min={1} max={8} value={data.members} onChange={e => update({ members: +e.target.value })} />
           </Field>
 
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             <Label>Annual Income</Label>
             <Dropdown value={data.income} onChange={e => update({ income: +e.target.value })}>
               {INCOME_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </Dropdown>
           </div>
 
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             {/* budget slider */}
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1">

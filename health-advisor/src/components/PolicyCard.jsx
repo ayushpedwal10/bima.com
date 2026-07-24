@@ -75,7 +75,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
     }`}>
 
       {/* Top bar */}
-      <div className="flex items-center justify-between px-6 pt-5 pb-0">
+      <div className="flex items-center justify-between px-4 sm:px-6 pt-4 sm:pt-5 pb-0">
         <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${rc.bg} ${rc.text}`}>
           {rc.label}
         </span>
@@ -88,7 +88,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
       </div>
 
       {/* Body */}
-      <div className="px-6 pt-4 pb-5">
+      <div className="px-4 sm:px-6 pt-4 pb-5">
         {/* Name + price */}
         <div className="flex items-start justify-between gap-4 mb-5">
           <div className="flex items-start gap-3.5 flex-1 min-w-0">
@@ -114,7 +114,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
         </div>
 
         {/* 4 key metrics */}
-        <div className="grid grid-cols-4 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
           <div className="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
             <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-1 flex items-center justify-center gap-1">
               Coverage <Tooltip term="Sum Insured" />
@@ -166,7 +166,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
       {/* Expand toggle */}
       <div className="border-t border-slate-100">
         <button onClick={() => setOpen(o => !o)}
-          className="w-full flex items-center justify-between px-6 py-3.5 text-sm text-slate-500 hover:bg-slate-50/80 transition-colors font-semibold">
+          className="w-full flex items-center justify-between px-4 sm:px-6 py-3.5 text-sm text-slate-500 hover:bg-slate-50/80 transition-colors font-semibold">
           <span>{open ? "Hide details" : "View pros, cons & why it suits you"}</span>
           <svg className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
@@ -174,10 +174,10 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
         </button>
 
         {open && (
-          <div className="px-6 pb-6 space-y-5 border-t border-slate-100 pt-5">
+          <div className="px-4 sm:px-6 pb-5 sm:pb-6 space-y-5 border-t border-slate-100 pt-5">
 
             {/* Plain-language key numbers */}
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 text-center">
                 <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-1 flex items-center justify-center gap-1">
                   No-Claim Bonus <Tooltip term="NCB" />
@@ -214,7 +214,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
             </div>
 
             {/* Pros / Cons */}
-            <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-emerald-50/50 rounded-2xl p-4 border border-emerald-100">
                 <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2.5">Pros</p>
                 <ul className="space-y-2">
@@ -239,7 +239,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect }) {
 
             {/* Why it suits / warnings */}
             {(reasons.length > 0 || warnings.length > 0) && (
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {reasons.length > 0 && (
                   <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4">
                     <p className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-2">Why it suits you</p>
