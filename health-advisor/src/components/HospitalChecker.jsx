@@ -148,7 +148,7 @@ function HospitalMap({ hospitals, selectedId, onSelect }) {
   }, [hospitals, selectedId])
 
   return (
-    <div ref={mapRef} className="w-full h-full rounded-2xl overflow-hidden"
+    <div ref={mapRef} className="relative z-0 isolate w-full h-full rounded-2xl overflow-hidden"
       style={{ minHeight: 340 }} />
   )
 }
@@ -367,7 +367,7 @@ export default function HospitalChecker({ profile, ranked }) {
         {/* Map */}
         {showMap && (
           <div className="hidden lg:block">
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" style={{ height: 540 }}>
+            <div className="relative z-0 isolate bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" style={{ height: 540 }}>
               <div className="px-4 py-3 border-b border-slate-100 flex items-center justify-between">
                 <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">
                   {city || "All Cities"} — {results.length} hospitals
