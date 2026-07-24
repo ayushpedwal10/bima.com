@@ -1,0 +1,4 @@
+# Local Streamlit dashboard dependencies. The Vercel deployment uses only
+# requirements.txt because it serves the Flask API, not app.py.
+-r requirements.txt
+streamlit>=1.32.0
