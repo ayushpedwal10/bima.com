@@ -92,9 +92,9 @@ export default function PolicyCard({ ranked, rank, pr, onInspect, isShortlisted,
                 : "border-slate-200 bg-white text-slate-500 hover:border-blue-300 hover:text-blue-600"
             } disabled:cursor-not-allowed disabled:opacity-40`}>
             <span>{isShortlisted ? "★" : "☆"}</span>
-            <span className="hidden sm:inline">{isShortlisted ? "Shortlisted" : "Shortlist"}</span>
+            <span>{isShortlisted ? "Saved" : "Shortlist"}</span>
           </button>
-          <span className="text-[10px] text-slate-400 font-semibold flex items-center gap-1">
+          <span className="hidden md:flex text-[10px] text-slate-400 font-semibold items-center gap-1">
             Match Score <Tooltip term="Match Score" />
           </span>
           <ScoreBar score={score} />
