@@ -44,7 +44,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50">
 
       {/* ── Header ── */}
-      <header className="bg-white/90 backdrop-blur-sm border-b border-slate-200/80 sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-md border-b border-slate-100/80 sticky top-0 z-50 shadow-sm shadow-slate-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-2" style={{ height: 60 }}>
           <div className="flex items-center gap-3">
             <button onClick={handleReset} className="flex items-center gap-3 hover:opacity-80 transition-opacity">

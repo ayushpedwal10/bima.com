@@ -38,8 +38,11 @@ export default function Wizard({ onSubmit, mode }) {
     <div className="flex" style={{ height: "calc(100vh - 60px)" }}>
 
       {/* ─── Sidebar ─────────────────────────────────────── */}
-      <aside className="hidden lg:flex w-64 xl:w-72 flex-shrink-0 flex-col border-r border-slate-200 bg-white">
-        <div className="flex-1 flex flex-col px-6 py-8">
+      <aside className="hidden lg:flex w-64 xl:w-72 flex-shrink-0 flex-col border-r border-slate-100 bg-white relative overflow-hidden">
+        {/* subtle gradient bg */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white pointer-events-none" />
+
+        <div className="relative flex-1 flex flex-col px-6 py-8">
 
           {/* step list */}
           <nav className="flex-1 space-y-1">
@@ -47,11 +50,11 @@ export default function Wizard({ onSubmit, mode }) {
               const done   = i < step
               const active = i === step
               return (
-                <div key={i} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all ${
-                  active ? "bg-blue-50" : ""
+                <div key={i} className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ${
+                  active ? "bg-blue-50 shadow-sm shadow-blue-100" : ""
                 }`}>
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all ${
-                    done   ? "bg-emerald-500 text-white"
+                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all duration-300 ${
+                    done   ? "bg-emerald-500 text-white shadow-sm shadow-emerald-500/30"
                     : active ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     :          "bg-slate-100 text-slate-400"
                   }`}>
@@ -63,10 +66,10 @@ export default function Wizard({ onSubmit, mode }) {
                     }
                   </div>
                   <div>
-                    <p className={`text-sm font-semibold leading-tight ${
+                    <p className={`text-sm font-bold leading-tight transition-colors ${
                       active ? "text-blue-700" : done ? "text-slate-700" : "text-slate-400"
                     }`}>{s.label}</p>
-                    <p className={`text-xs mt-0.5 ${
+                    <p className={`text-xs mt-0.5 transition-colors ${
                       active ? "text-blue-500" : done ? "text-emerald-600" : "text-slate-300"
                     }`}>
                       {done ? "✓ Completed" : active ? s.sub : "Upcoming"}
@@ -81,16 +84,19 @@ export default function Wizard({ onSubmit, mode }) {
           <div className="mt-6 pt-6 border-t border-slate-100">
             <div className="flex justify-between text-xs font-semibold mb-2">
               <span className="text-slate-400">Progress</span>
-              <span className="text-slate-700">{completedPct}%</span>
+              <span className="text-blue-600 font-black">{completedPct}%</span>
             </div>
             <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-              <div className="h-full bg-blue-600 rounded-full transition-all duration-500"
-                style={{ width: `${completedPct}%` }} />
+              <div className="h-full rounded-full transition-all duration-700 ease-out"
+                style={{
+                  width: `${completedPct}%`,
+                  background: "linear-gradient(90deg, #2563eb, #06b6d4)"
+                }} />
             </div>
           </div>
 
           {/* trust */}
-          <div className="mt-6 space-y-2">
+          <div className="mt-5 space-y-2">
             {[
               { icon: "🔒", text: "Data private & never sold" },
               { icon: "✅", text: "IRDAI verified rate cards" },
@@ -109,22 +115,29 @@ export default function Wizard({ onSubmit, mode }) {
       </aside>
 
       {/* ─── Main panel ──────────────────────────────────── */}
-      <div className="flex-1 flex flex-col overflow-hidden bg-slate-50">
+      <div className="flex-1 flex flex-col overflow-hidden relative" style={{ background: "#f8faff" }}>
+        {/* Subtle mesh bg */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-30"
+            style={{ background: "radial-gradient(circle, rgba(37,99,235,.06), transparent)" }} />
+          <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full blur-3xl opacity-20"
+            style={{ background: "radial-gradient(circle, rgba(6,182,212,.06), transparent)" }} />
+        </div>
 
         {/* mobile header */}
-        <div className="lg:hidden flex-shrink-0 bg-white border-b border-slate-100 px-5 py-3">
+        <div className="relative z-10 lg:hidden flex-shrink-0 bg-white/90 backdrop-blur-sm border-b border-slate-100 px-5 py-3">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-slate-600">{STEPS[step].label}</span>
+            <span className="text-xs font-bold text-slate-600">{STEPS[step].label}</span>
             <span className="text-xs text-slate-400">Step {step + 1} / {STEPS.length}</span>
           </div>
           <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-blue-600 rounded-full transition-all duration-500"
-              style={{ width: `${completedPct}%` }} />
+            <div className="h-full rounded-full transition-all duration-700 ease-out"
+              style={{ width: `${completedPct}%`, background: "linear-gradient(90deg,#2563eb,#06b6d4)" }} />
           </div>
         </div>
 
         {/* step content */}
-        <div className="flex-1 overflow-y-auto"
+        <div className="relative z-10 flex-1 overflow-y-auto"
           onKeyDown={e => {
             if (e.key === "Enter" && e.target.tagName !== "TEXTAREA" && e.target.tagName !== "SELECT") {
               if (step < STEPS.length - 1) goNext()
@@ -140,11 +153,11 @@ export default function Wizard({ onSubmit, mode }) {
         </div>
 
         {/* bottom nav */}
-        <div className="flex-shrink-0 bg-white border-t border-slate-200 px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+        <div className="relative z-10 flex-shrink-0 bg-white/90 backdrop-blur-sm border-t border-slate-100 px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <button onClick={goBack} disabled={step === 0}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-sm font-semibold
-                hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all">
+                hover:bg-slate-50 hover:border-slate-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/>
               </svg>
@@ -153,7 +166,7 @@ export default function Wizard({ onSubmit, mode }) {
 
             <div className="flex items-center gap-1.5">
               {STEPS.map((_, i) => (
-                <div key={i} className={`rounded-full transition-all duration-300 ${
+                <div key={i} className={`rounded-full transition-all duration-400 ${
                   i === step ? "w-6 h-2 bg-blue-600" :
                   i < step   ? "w-2 h-2 bg-emerald-500" :
                                "w-2 h-2 bg-slate-200"
@@ -163,18 +176,18 @@ export default function Wizard({ onSubmit, mode }) {
 
             {step < STEPS.length - 1
               ? <button onClick={goNext}
-                  className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-bold
-                    hover:bg-blue-700 active:scale-[0.98] transition-all shadow-md shadow-blue-600/25">
+                  className="group inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-bold
+                    hover:bg-blue-700 active:scale-[0.98] transition-all shadow-md shadow-blue-600/25 overflow-hidden shine">
                   Continue
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>
               : <button onClick={() => onSubmit(data)}
-                  className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-bold
-                    hover:bg-emerald-700 active:scale-[0.98] transition-all shadow-md shadow-emerald-600/25">
+                  className="group inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-bold
+                    hover:bg-emerald-700 active:scale-[0.98] transition-all shadow-md shadow-emerald-600/25 overflow-hidden shine">
                   Find My Plans
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>

@@ -103,10 +103,10 @@ export default function Results({ results, onReset, mode }) {
 
   return (
     <>
-    <div className="bg-slate-100 min-h-screen">
+    <div className="bg-[#f4f6ff] min-h-screen">
 
       {/* ── Compact top bar ── */}
-      <div className="bg-white border-b border-slate-200 sticky top-[60px] z-40">
+      <div className="bg-white/90 backdrop-blur-md border-b border-slate-100/60 sticky top-[60px] z-40 shadow-sm shadow-slate-100/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4" style={{ height: 52 }}>
 
           {/* Left: profile summary */}
@@ -174,7 +174,7 @@ export default function Results({ results, onReset, mode }) {
             <aside className={`
               fixed lg:sticky top-[112px] left-0 z-50 lg:z-auto
               w-64 lg:w-56 xl:w-64 flex-shrink-0
-              bg-white border border-slate-200 rounded-2xl shadow-xl lg:shadow-sm
+              bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl shadow-xl lg:shadow-md
               overflow-y-auto transition-transform duration-300 ease-out
               ${sidebarOpen ? "translate-x-4" : "-translate-x-full lg:translate-x-0"}
               lg:max-h-[calc(100vh-130px)]
@@ -260,7 +260,7 @@ export default function Results({ results, onReset, mode }) {
             </div>
 
             {/* Tab content */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl border border-slate-200/60 shadow-md p-4 sm:p-6">
               {tab === 0 && (
                 <div className="space-y-4">
                   {/* Mini hero strip */}
