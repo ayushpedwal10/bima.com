@@ -1,7 +1,9 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+﻿{
   "buildCommand": "cd health-advisor && npm run build",
   "outputDirectory": "health-advisor/dist",
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
   "functions": {
     "api.py": {
       "includeFiles": "health-advisor/dist/**",
