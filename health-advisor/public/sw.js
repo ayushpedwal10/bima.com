@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bima-com-v2'
+const CACHE_NAME = 'beemasaathi-v3'
 const APP_SHELL = ['/', '/manifest.webmanifest', '/pwa-icon.svg', '/favicon.svg']
 
 self.addEventListener('install', (event) => {
@@ -23,11 +23,24 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
+  // Network-first for hashed scripts and styles to avoid stale MIME type poisoning
+  if (url.pathname.startsWith('/assets/')) {
+    event.respondWith(
+      fetch(request).catch(() => caches.match(request))
+    )
+    return
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => cached || fetch(request).then((response) => {
       const copy = response.clone()
       caches.open(CACHE_NAME).then((cache) => cache.put(request, copy))
       return response
-    }).catch(() => caches.match('/')))
+    }).catch(() => {
+      if (request.mode === 'navigate') {
+        return caches.match('/')
+      }
+      return null
+    }))
   )
 })

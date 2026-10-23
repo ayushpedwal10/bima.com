@@ -157,7 +157,13 @@ Ask me anything or pick a quick topic below:`,
   ])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem("gemini_api_key") || import.meta.env.VITE_GEMINI_API_KEY || "")
+  const [apiKey, setApiKey] = useState(() => {
+    try {
+      return localStorage.getItem("gemini_api_key") || import.meta.env.VITE_GEMINI_API_KEY || ""
+    } catch {
+      return import.meta.env.VITE_GEMINI_API_KEY || ""
+    }
+  })
   const [showSettings, setShowSettings] = useState(false)
   const [keySaved, setKeySaved] = useState(false)
   const chatEndRef = useRef(null)
@@ -277,7 +283,11 @@ Knowledge base:
 
   function handleSaveKey(newKey) {
     setApiKey(newKey)
-    localStorage.setItem("gemini_api_key", newKey)
+    try {
+      localStorage.setItem("gemini_api_key", newKey)
+    } catch {
+      // ignore
+    }
     setKeySaved(true)
     setTimeout(() => {
       setKeySaved(false)

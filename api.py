@@ -20,7 +20,14 @@ from flask_cors import CORS
 import json
 import os
 import sys
+import mimetypes
 from pathlib import Path
+
+# Explicitly register modern web MIME types for serverless Python runtime
+mimetypes.add_type("application/javascript", ".js")
+mimetypes.add_type("text/css", ".css")
+mimetypes.add_type("image/svg+xml", ".svg")
+mimetypes.add_type("application/manifest+json", ".webmanifest")
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -50,8 +57,17 @@ def frontend():
 
 @app.get("/assets/<path:asset_path>")
 def frontend_assets(asset_path: str):
-    """Serve Vite's hashed JavaScript, CSS, and other static assets."""
-    return send_from_directory(FRONTEND_DIST / "assets", asset_path)
+    """Serve Vite's hashed JavaScript, CSS, and other static assets with explicit MIME types."""
+    mimetype = None
+    if asset_path.endswith(".js"):
+        mimetype = "application/javascript"
+    elif asset_path.endswith(".css"):
+        mimetype = "text/css"
+    elif asset_path.endswith(".svg"):
+        mimetype = "image/svg+xml"
+    elif asset_path.endswith(".json"):
+        mimetype = "application/json"
+    return send_from_directory(FRONTEND_DIST / "assets", asset_path, mimetype=mimetype)
 
 
 @app.get("/<path:static_path>")
@@ -62,7 +78,16 @@ def frontend_static(static_path: str):
 
     candidate = FRONTEND_DIST / static_path
     if candidate.is_file():
-        return send_from_directory(FRONTEND_DIST, static_path)
+        mimetype = None
+        if static_path.endswith(".js"):
+            mimetype = "application/javascript"
+        elif static_path.endswith(".css"):
+            mimetype = "text/css"
+        elif static_path.endswith(".svg"):
+            mimetype = "image/svg+xml"
+        elif static_path.endswith(".webmanifest") or static_path.endswith(".json"):
+            mimetype = "application/manifest+json"
+        return send_from_directory(FRONTEND_DIST, static_path, mimetype=mimetype)
     return send_from_directory(FRONTEND_DIST, "index.html")
 
 
