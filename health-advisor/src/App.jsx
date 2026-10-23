@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { ShieldCheck, Bot, Sparkles, MessageSquare, AlertCircle } from "lucide-react"
+import { ShieldCheck, Bot, Sparkles, AlertCircle, ArrowRight } from "lucide-react"
 import Wizard from "./components/Wizard"
 import Results from "./components/Results"
 import LandingPage from "./components/LandingPage"
@@ -25,7 +25,7 @@ export default function App() {
     try {
       const [quote] = await Promise.all([
         getQuote(profile),
-        new Promise(resolve => setTimeout(resolve, 600)) // fast & responsive transition
+        new Promise(resolve => setTimeout(resolve, 600)) // smooth actuarial computing transition
       ])
       setResults(quote)
       setScreen("results")
@@ -43,11 +43,11 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
 
       {/* ─── Institutional Navigation Header ─── */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-15 flex items-center justify-between gap-3">
+      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           
           {/* Brand Identity */}
           <div className="flex items-center gap-3">
@@ -55,14 +55,19 @@ export default function App() {
               onClick={handleReset}
               className="flex items-center gap-2.5 text-left hover:opacity-90 transition-opacity"
             >
-              <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-xs">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white shadow-sm shadow-blue-600/30">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-slate-950 text-base leading-none tracking-tight">
-                  BeemaSaathi
-                </span>
-                <span className="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-slate-950 text-base leading-none tracking-tight">
+                    BeemaSaathi
+                  </span>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-sm bg-blue-100 text-blue-800 uppercase tracking-wider">
+                    AI
+                  </span>
+                </div>
+                <span className="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">
                   Health Insurance Advisory
                 </span>
               </div>
@@ -71,7 +76,7 @@ export default function App() {
             {/* Regulatory Verification Pill */}
             <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] bg-emerald-50 text-emerald-800 border border-emerald-200/80 font-semibold px-2.5 py-1 rounded-full ml-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              IRDAI Verified
+              IRDAI Data Verified
             </div>
 
             {/* Engine Status Pill */}
@@ -82,29 +87,30 @@ export default function App() {
                   : "bg-slate-100 text-slate-600 border border-slate-200/80"
               }`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${apiOnline ? "bg-blue-600 animate-pulse" : "bg-slate-400"}`} />
-                {apiOnline ? "Python Engine" : "Local Engine"}
+                {apiOnline ? "Python Engine" : "Local Actuarial"}
               </div>
             )}
           </div>
 
           {/* Right Header Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             
             {/* Ask Copilot Header Button */}
             <button
               onClick={() => setCopilotOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold transition-all shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold transition-all shadow-2xs"
             >
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span className="hidden sm:inline">Ask</span> Copilot
+              <Bot className="w-3.5 h-3.5 text-blue-600" />
+              <span>Ask Copilot</span>
             </button>
 
             {screen === "landing" && (
               <button
                 onClick={() => setScreen("wizard")}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-2xs"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm shadow-blue-600/20"
               >
-                Start Matching →
+                <span>Find My Plan</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             )}
 
@@ -164,7 +170,7 @@ export default function App() {
           />
         )}
         {screen === "error" && (
-          <div className="min-h-[calc(100vh-60px)] flex items-center justify-center px-4">
+          <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-4">
             <div className="max-w-md w-full text-center bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4 border border-amber-200">
                 <AlertCircle className="w-6 h-6" />
@@ -190,25 +196,26 @@ export default function App() {
         )}
       </main>
 
-      {/* ─── Floating Copilot Launcher Pill ─── */}
-      <div className="fixed bottom-5 right-5 z-40">
-        <button
-          onClick={() => setCopilotOpen(true)}
-          className="group flex items-center gap-2 px-4 py-3 bg-slate-900 hover:bg-blue-600 text-white rounded-full shadow-lg shadow-slate-900/20 hover:shadow-blue-600/30 transition-all active:scale-95 border border-slate-700/60"
-        >
-          <div className="relative">
-            <Bot className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
-            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
-            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="text-xs font-bold leading-none">Saathi Copilot</span>
-            <span className="text-[10px] text-slate-300 group-hover:text-blue-100 leading-none mt-1">
-              Ask AI Advisor
-            </span>
-          </div>
-        </button>
-      </div>
+      {/* ─── Floating Copilot Launcher Pill (Hidden on Wizard to prevent overlapping the Next button!) ─── */}
+      {screen !== "wizard" && (
+        <div className="fixed bottom-6 right-6 z-40">
+          <button
+            onClick={() => setCopilotOpen(true)}
+            className="group flex items-center gap-2.5 px-4 py-3 bg-slate-950 hover:bg-blue-600 text-white rounded-full shadow-xl shadow-slate-950/20 hover:shadow-blue-600/30 transition-all active:scale-95 border border-slate-800"
+          >
+            <div className="relative">
+              <Bot className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full" />
+            </div>
+            <div className="flex flex-col text-left pr-1">
+              <span className="text-xs font-bold leading-none">Saathi Copilot</span>
+              <span className="text-[10px] text-slate-400 group-hover:text-blue-100 leading-none mt-1">
+                Ask AI Advisor
+              </span>
+            </div>
+          </button>
+        </div>
+      )}
 
       {/* ─── AI Copilot Slide-over Drawer ─── */}
       <AICopilotDrawer
