@@ -1,4 +1,4 @@
-﻿import { useState, useMemo } from "react"
+import { useState, useMemo } from "react"
 import { generateInsights } from "../engine/aiInsights"
 import InsurerLogo from "./InsurerLogo"
 
@@ -113,7 +113,7 @@ function InsightCard({ card, rank, defaultOpen }) {
   )
 }
 
-export default function AIInsights({ profile, ranked, premiumMap }) {
+export default function AIInsights({ profile, ranked, premiumMap, onOpenCopilot }) {
   const [filter, setFilter] = useState("all")
   const cards = useMemo(() => generateInsights(profile, ranked, premiumMap), [profile, ranked, premiumMap])
 
@@ -178,6 +178,24 @@ export default function AIInsights({ profile, ranked, premiumMap }) {
 
       {/* Cards */}
       <div className="space-y-3">
+        {onOpenCopilot && (
+          <div className="flex items-center justify-between p-3.5 bg-blue-50/80 border border-blue-200/80 rounded-2xl">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xl">🤖</span>
+              <div>
+                <p className="text-xs font-bold text-blue-950">Ask Saathi Copilot Anything</p>
+                <p className="text-[11px] text-blue-700/80">Compare clauses, check waiting periods, or clarify rejection risks.</p>
+              </div>
+            </div>
+            <button
+              onClick={onOpenCopilot}
+              className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition-all shadow-xs"
+            >
+              Open Copilot →
+            </button>
+          </div>
+        )}
+
         {shown.map((card, i) => (
           <InsightCard
             key={card.id}

@@ -1,4 +1,4 @@
-﻿import { useState } from "react"
+import { useState } from "react"
 import PolicyCard from "./PolicyCard"
 import PremiumBreakdown from "./PremiumBreakdown"
 import CompareTable from "./CompareTable"
@@ -67,7 +67,7 @@ const PRIORITY_BADGE = {
   coverage: { label: "Ranked by coverage",           cls: "bg-purple-100 text-purple-700",   icon: "📋" },
 }
 
-export default function Results({ results, onReset, mode }) {
+export default function Results({ results, onReset, mode, onOpenCopilot }) {
   const [tab,          setTab]          = useState(0)
   const [selPolicy,    setSelPolicy]    = useState(results.ranked[0].policy.id)
   const [pdfLoading,   setPdfLoading]   = useState(false)
@@ -138,6 +138,13 @@ export default function Results({ results, onReset, mode }) {
 
           {/* Right: actions */}
           <div className="flex items-center gap-2 flex-shrink-0">
+            {onOpenCopilot && (
+              <button onClick={onOpenCopilot}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold hover:bg-blue-100 transition-all shadow-2xs">
+                <span>🤖</span>
+                <span className="hidden md:inline">Ask</span> Copilot
+              </button>
+            )}
             <button onClick={() => setShowGlossary(true)}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-slate-500 text-xs font-semibold hover:bg-slate-50 transition-all">
               📖 Glossary
@@ -374,7 +381,7 @@ export default function Results({ results, onReset, mode }) {
                 profile={profile}
                 comparisonLabel={compareShortlist && shortlisted.length ? "Shortlisted" : "All"} />}
               {tab === 12 && <EmployerCoverChecker profile={profile} ranked={ranked} premiumMap={premiumMap} />}
-              {tab === 13 && <AIInsights profile={profile} ranked={ranked} premiumMap={premiumMap} />}
+              {tab === 13 && <AIInsights profile={profile} ranked={ranked} premiumMap={premiumMap} onOpenCopilot={onOpenCopilot} />}
             </div>
 
             {/* ── IRDAI source note ── */}

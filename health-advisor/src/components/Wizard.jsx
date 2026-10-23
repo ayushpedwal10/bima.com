@@ -116,15 +116,7 @@ export default function Wizard({ onSubmit, mode }) {
 
       {/* ─── Main panel ──────────────────────────────────── */}
       <div className="flex-1 flex flex-col overflow-hidden relative" style={{ background: "#f8faff" }}>
-        {/* Subtle mesh bg */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-30"
-            style={{ background: "radial-gradient(circle, rgba(37,99,235,.06), transparent)" }} />
-          <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full blur-3xl opacity-20"
-            style={{ background: "radial-gradient(circle, rgba(6,182,212,.06), transparent)" }} />
-        </div>
-
-        {/* mobile header */}
+                {/* mobile header */}
         <div className="relative z-10 lg:hidden flex-shrink-0 bg-white/90 backdrop-blur-sm border-b border-slate-100 px-5 py-3">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-slate-600">{STEPS[step].label}</span>
