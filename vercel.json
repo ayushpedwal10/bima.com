@@ -1,16 +1,10 @@
 {
   "buildCommand": "cd health-advisor && npm run build",
   "outputDirectory": "health-advisor/dist",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api.py"
-    }
-  ],
   "functions": {
     "api.py": {
-      "includeFiles": "data/policies.json",
-      "excludeFiles": "{app.py,health-advisor/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
+      "includeFiles": "health-advisor/dist/**",
+      "excludeFiles": "{app.py,health-advisor/src/**,health-advisor/node_modules/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
     }
   }
 }
