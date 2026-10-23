@@ -1,9 +1,9 @@
-const CACHE_NAME = 'beemasaathi-v3'
+const CACHE_NAME = 'bimacom-v4'
 const APP_SHELL = ['/', '/manifest.webmanifest', '/pwa-icon.svg', '/favicon.svg']
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)))
   self.skipWaiting()
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)))
 })
 
 self.addEventListener('activate', (event) => {
@@ -23,24 +23,28 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Network-first for hashed scripts and styles to avoid stale MIME type poisoning
-  if (url.pathname.startsWith('/assets/')) {
+  // Network-First for HTML navigation and hashed assets to always deliver fresh releases
+  if (request.mode === 'navigate' || url.pathname.startsWith('/assets/')) {
     event.respondWith(
-      fetch(request).catch(() => caches.match(request))
+      fetch(request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const copy = response.clone()
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy))
+          }
+          return response
+        })
+        .catch(() => caches.match(request).then(cached => cached || caches.match('/')))
     )
     return
   }
 
+  // Cache-first fallback for static shell icons
   event.respondWith(
     caches.match(request).then((cached) => cached || fetch(request).then((response) => {
       const copy = response.clone()
       caches.open(CACHE_NAME).then((cache) => cache.put(request, copy))
       return response
-    }).catch(() => {
-      if (request.mode === 'navigate') {
-        return caches.match('/')
-      }
-      return null
     }))
   )
 })
