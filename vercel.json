@@ -5,16 +5,12 @@
     {
       "source": "/api/(.*)",
       "destination": "/api.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api.py"
     }
   ],
   "functions": {
     "api.py": {
-      "includeFiles": "{health-advisor/dist/**,data/policies.json}",
-      "excludeFiles": "{app.py,health-advisor/src/**,health-advisor/node_modules/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
+      "includeFiles": "data/policies.json",
+      "excludeFiles": "{app.py,health-advisor/**,data/customers.json,data/customers.csv,data/insurers.json,data/generate_*.py}"
     }
   }
 }
