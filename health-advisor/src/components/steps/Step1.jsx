@@ -109,7 +109,7 @@ export default function Step1({ data, update, mode }) {
               key={s.id}
               type="button"
               onClick={() => selectSegment(s.id)}
-              className={`p-4 rounded-2xl border-2 text-left transition-all relative flex flex-col justify-between ${
+              className={`p-4 rounded-2xl border-2 text-left hover-lift transition-all relative flex flex-col justify-between ${
                 isSelected
                   ? "border-blue-600 bg-blue-50/50 shadow-sm shadow-blue-500/10 ring-2 ring-blue-500/20"
                   : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/50"

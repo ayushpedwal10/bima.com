@@ -147,7 +147,7 @@ export default function AICopilotDrawer({ isOpen, onClose, results, currentScree
     {
       id: "welcome",
       role: "assistant",
-      content: `Hello! I am **Saathi Copilot**, your AI insurance advisory assistant. 
+      content: `Hello! I am **bima Copilot**, your official bima.com AI insurance advisory assistant. 
 
 I can help explain policy nuances, compare plans, check disease waiting periods, analyze claim rejection traps, and calculate Section 80D tax deductions.
 
@@ -211,7 +211,7 @@ Ask me anything or pick a quick topic below:`,
         const topScore = ranked?.[0]?.score || "90"
         const userContext = profile ? `User Profile: Age ${profile.age}, City: ${profile.city}, Budget: ₹${profile.budget}/mo, Smoker: ${profile.smoker ? "Yes" : "No"}, Pre-existing conditions: ${profile.ped ? "Yes" : "No"}, Priority: ${profile.priority}. Top recommended plan: ${topPlan} (Score: ${topScore}/100).` : "User is browsing general Indian health insurance."
 
-        const systemPrompt = `You are Saathi Copilot, an expert AI Health Insurance Advisor for India, grounded strictly in IRDAI regulatory guidelines and verified Indian health insurance policies.
+        const systemPrompt = `You are bima Copilot, the official expert AI Health Insurance Advisor for bima.com (India), grounded strictly in IRDAI regulatory guidelines and verified Indian health insurance policies.
 ${userContext}
 Knowledge base:
 - Top 10 Indian health policies: HDFC ERGO Optima Secure (CSR 99.01%), Niva Bupa ReAssure 2.0 (CSR 96.01%), Care Supreme (CSR 96.36%), Star Health Super Surplus (CSR 91.06%), Aditya Birla Activ One, ICICI Lombard, Bajaj Allianz, Tata AIG, Reliance General.
@@ -320,13 +320,13 @@ Knowledge base:
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-sm font-bold text-slate-900">Saathi Copilot</h3>
-                <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60">
+                <h3 className="text-sm font-black text-slate-900 tracking-tight">bima Copilot</h3>
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60">
                   <Sparkles className="w-2.5 h-2.5" />
-                  {apiKey ? "Gemini Live" : "Regulatory Engine"}
+                  {apiKey ? "Gemini Live" : "IRDAI Engine"}
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500">IRDAI-verified advisory & plan analysis</p>
+              <p className="text-[11px] text-slate-400 font-medium">bima.com actuarial advisory & analysis</p>
             </div>
           </div>
 
@@ -362,7 +362,7 @@ Knowledge base:
               <button onClick={() => setShowSettings(false)} className="text-slate-400 hover:text-slate-600">✕</button>
             </div>
             <p className="text-[11px] text-slate-500 leading-relaxed">
-              By default, Saathi Copilot uses our high-accuracy IRDAI actuarial engine with zero API key required. You can also paste your Gemini API key for open-ended generative reasoning.
+              By default, bima Copilot uses our high-accuracy IRDAI actuarial engine with zero API key required. You can also paste your Gemini API key for open-ended generative reasoning.
             </p>
             <div className="flex gap-2">
               <input

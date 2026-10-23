@@ -274,7 +274,7 @@ export default function Step2({ data, update }) {
             return (
               <label
                 key={key}
-                className={`flex items-start gap-3.5 p-4 sm:p-5 rounded-2xl border-2 cursor-pointer select-none transition-all duration-150 ${
+                className={`flex items-start gap-3.5 p-4 sm:p-5 rounded-2xl border-2 cursor-pointer select-none hover-lift transition-all duration-200 ${
                   isChecked
                     ? "border-blue-600 bg-blue-50/50 shadow-sm shadow-blue-500/10 ring-1 ring-blue-500/20"
                     : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/50"

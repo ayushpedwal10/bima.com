@@ -133,7 +133,7 @@ export default function Wizard({ onSubmit, mode, onOpenCopilot }) {
                 <div className="min-w-0 flex-1">
                   <span className="text-xs font-bold block leading-tight">Need Help Deciding?</span>
                   <span className="text-[10px] text-blue-600/80 block leading-tight mt-0.5">
-                    Ask Saathi Copilot for instant advice
+                    Ask bima Copilot for instant advice
                   </span>
                 </div>
               </button>

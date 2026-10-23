@@ -183,7 +183,7 @@ export default function AIInsights({ profile, ranked, premiumMap, onOpenCopilot 
             <div className="flex items-center gap-2.5">
               <span className="text-xl">🤖</span>
               <div>
-                <p className="text-xs font-bold text-blue-950">Ask Saathi Copilot Anything</p>
+                <p className="text-xs font-bold text-blue-950">Ask bima Copilot Anything</p>
                 <p className="text-[11px] text-blue-700/80">Compare clauses, check waiting periods, or clarify rejection risks.</p>
               </div>
             </div>

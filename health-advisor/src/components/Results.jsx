@@ -117,7 +117,7 @@ export default function Results({ results, onReset, mode, onOpenCopilot }) {
       <div className="bg-slate-50 min-h-screen pb-16">
 
         {/* ─── Institutional Action Bar ─── */}
-        <div className="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-16 z-30 shadow-xs">
+        <div className="glass-panel sticky top-16 z-30 shadow-xs border-b border-white/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
 
             {/* Left: Client Profile Tags */}
@@ -341,7 +341,7 @@ export default function Results({ results, onReset, mode, onOpenCopilot }) {
                 <div className="space-y-5">
 
                   {/* Executive Hero Match Banner */}
-                  <div className="rounded-3xl p-6 sm:p-7 text-white relative overflow-hidden shadow-md shadow-blue-950/10"
+                  <div className="rounded-3xl p-6 sm:p-7 text-white relative overflow-hidden shadow-xl shadow-blue-950/20 hover-lift border border-white/10"
                     style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)" }}
                   >
                     <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

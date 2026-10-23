@@ -131,7 +131,7 @@ export default function Step3({ data, update, mode }) {
                 aria-checked={isChecked}
                 tabIndex={0}
                 onKeyDown={e => (e.key === " " || e.key === "Enter") && update({ [n.key]: !isChecked })}
-                className={`flex flex-col justify-between p-4 rounded-2xl border-2 cursor-pointer select-none transition-all duration-150 ${
+                className={`flex flex-col justify-between p-4 rounded-2xl border-2 cursor-pointer select-none hover-lift transition-all duration-200 ${
                   isChecked
                     ? "border-blue-600 bg-blue-50/50 shadow-sm shadow-blue-500/10 ring-1 ring-blue-500/20"
                     : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/50"
@@ -183,7 +183,7 @@ export default function Step3({ data, update, mode }) {
                 key={p.key}
                 type="button"
                 onClick={() => update({ priority: p.key })}
-                className={`flex flex-col justify-between p-5 rounded-2xl border-2 text-left transition-all duration-150 ${
+                className={`flex flex-col justify-between p-5 rounded-2xl border-2 text-left hover-lift transition-all duration-200 ${
                   isSelected
                     ? "border-blue-600 bg-blue-50/60 shadow-sm shadow-blue-500/10 ring-2 ring-blue-500/20"
                     : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/50"

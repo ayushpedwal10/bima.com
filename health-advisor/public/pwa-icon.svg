@@ -1,5 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#7e14ff"/>
-  <path fill="#fff" d="M256 88c-68 50-123 55-155 58v108c0 101 61 150 155 191 94-41 155-90 155-191V146c-32-3-87-8-155-58Z"/>
-  <path fill="#7e14ff" d="M224 166h64v58h58v64h-58v58h-64v-58h-58v-64h58z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="pwaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="pwaPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#pwaGrad)"/>
+  <rect width="512" height="512" rx="120" fill="none" stroke="white" stroke-width="8" stroke-opacity="0.3"/>
+  <path d="M256 80L112 140V248C112 336 173.6 418.4 256 436C338.4 418.4 400 336 400 248V140L256 80Z" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M192 256H228L256 212L284 300L312 256H332" stroke="url(#pwaPulse)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="152" r="20" fill="white"/>
 </svg>

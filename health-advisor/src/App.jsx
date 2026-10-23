@@ -5,6 +5,7 @@ import Results from "./components/Results"
 import LandingPage from "./components/LandingPage"
 import LoadingScreen from "./components/LoadingScreen"
 import AICopilotDrawer from "./components/AICopilotDrawer"
+import Logo from "./components/Logo"
 import { getQuote, checkAPIHealth } from "./api/quoteClient"
 
 export default function App() {
@@ -43,50 +44,40 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-slate-50/70 text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 relative overflow-x-hidden">
 
-      {/* ─── Institutional Navigation Header ─── */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
+      {/* ─── Ambient Glow Blobs for Glassmorphism Depth ─── */}
+      <div className="w-[500px] h-[500px] bg-blue-400/10 ambient-glow -top-32 -left-32 animate-pulseGlow" />
+      <div className="w-[500px] h-[500px] bg-indigo-400/10 ambient-glow top-40 -right-32 animate-pulseGlow [animation-delay:3s]" />
+
+      {/* ─── Institutional Glassmorphic Header ─── */}
+      <header className="glass-panel sticky top-0 z-40 shadow-xs transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           
-          {/* Brand Identity */}
+          {/* Brand Identity / Official Logo */}
           <div className="flex items-center gap-3">
             <button
               onClick={handleReset}
-              className="flex items-center gap-2.5 text-left hover:opacity-90 transition-opacity"
+              className="text-left hover:opacity-95 transition-all group"
+              aria-label="bima.com home"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white shadow-sm shadow-blue-600/30">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-slate-950 text-base leading-none tracking-tight">
-                    BeemaSaathi
-                  </span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-sm bg-blue-100 text-blue-800 uppercase tracking-wider">
-                    AI
-                  </span>
-                </div>
-                <span className="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">
-                  Health Insurance Advisory
-                </span>
-              </div>
+              <Logo size="md" />
             </button>
 
             {/* Regulatory Verification Pill */}
-            <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] bg-emerald-50 text-emerald-800 border border-emerald-200/80 font-semibold px-2.5 py-1 rounded-full ml-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+            <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] bg-emerald-50/80 text-emerald-800 border border-emerald-200/80 font-bold px-3 py-1 rounded-full ml-1 shadow-2xs backdrop-blur-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
               IRDAI Data Verified
             </div>
 
             {/* Engine Status Pill */}
             {apiOnline !== null && (
-              <div className={`hidden md:inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full ${
+              <div className={`hidden md:inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-2xs ${
                 apiOnline
-                  ? "bg-blue-50 text-blue-700 border border-blue-200/80"
-                  : "bg-slate-100 text-slate-600 border border-slate-200/80"
+                  ? "bg-blue-50/80 text-blue-700 border border-blue-200/80"
+                  : "bg-slate-100/80 text-slate-600 border border-slate-200/80"
               }`}>
-                <span className={`w-1.5 h-1.5 rounded-full ${apiOnline ? "bg-blue-600 animate-pulse" : "bg-slate-400"}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${apiOnline ? "bg-blue-600 animate-ping" : "bg-slate-400"}`} />
                 {apiOnline ? "Python Engine" : "Local Actuarial"}
               </div>
             )}
@@ -98,7 +89,7 @@ export default function App() {
             {/* Ask Copilot Header Button */}
             <button
               onClick={() => setCopilotOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold transition-all shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-50/90 hover:bg-blue-100/90 text-blue-700 border border-blue-200 text-xs font-bold transition-all shadow-2xs hover:scale-105 active:scale-95"
             >
               <Bot className="w-3.5 h-3.5 text-blue-600" />
               <span>Ask Copilot</span>
@@ -107,20 +98,20 @@ export default function App() {
             {screen === "landing" && (
               <button
                 onClick={() => setScreen("wizard")}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm shadow-blue-600/20"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-bold transition-all shadow-sm shadow-blue-600/30 hover:scale-105 active:scale-95"
               >
                 <span>Find My Plan</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             )}
 
-            {/* User / Agent Mode Switcher */}
-            <div className="flex items-center bg-slate-100 border border-slate-200/80 rounded-xl p-0.5 text-xs font-semibold">
+            {/* Consumer / Advisor Mode Switcher */}
+            <div className="flex items-center bg-slate-200/60 backdrop-blur-xs border border-slate-200/80 rounded-xl p-0.5 text-xs font-semibold shadow-inner">
               <button
                 onClick={() => setMode("customer")}
                 className={`px-3 py-1 rounded-lg transition-all ${
                   mode === "customer"
-                    ? "bg-white text-blue-700 shadow-xs"
+                    ? "bg-white text-blue-700 shadow-2xs font-bold"
                     : "text-slate-500 hover:text-slate-900"
                 }`}
               >
@@ -130,7 +121,7 @@ export default function App() {
                 onClick={() => setMode("agent")}
                 className={`px-3 py-1 rounded-lg transition-all ${
                   mode === "agent"
-                    ? "bg-white text-blue-700 shadow-xs"
+                    ? "bg-white text-blue-700 shadow-2xs font-bold"
                     : "text-slate-500 hover:text-slate-900"
                 }`}
               >
@@ -147,7 +138,7 @@ export default function App() {
       {loading && <LoadingScreen apiOnline={apiOnline} />}
 
       {/* ─── Screen Router ─── */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {screen === "landing" && (
           <LandingPage
             onStart={() => setScreen("wizard")}
@@ -171,8 +162,8 @@ export default function App() {
         )}
         {screen === "error" && (
           <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-4">
-            <div className="max-w-md w-full text-center bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4 border border-amber-200">
+            <div className="max-w-md w-full text-center glass-panel-elevated rounded-3xl p-8 shadow-xl">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4 border border-amber-200 shadow-xs">
                 <AlertCircle className="w-6 h-6" />
               </div>
               <h2 className="text-xl font-bold text-slate-900 mb-1">Calculation Error</h2>
@@ -180,13 +171,13 @@ export default function App() {
               <div className="flex gap-3 justify-center">
                 <button
                   onClick={() => { setScreen("wizard"); setErrorMsg("") }}
-                  className="px-5 py-2.5 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-all"
+                  className="px-5 py-2.5 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-all shadow-xs"
                 >
                   Return to Wizard
                 </button>
                 <button
                   onClick={handleReset}
-                  className="px-5 py-2.5 border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl hover:bg-slate-50 transition-all"
+                  className="px-5 py-2.5 border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl hover:bg-slate-50 transition-all shadow-xs"
                 >
                   Start Over
                 </button>
@@ -196,19 +187,20 @@ export default function App() {
         )}
       </main>
 
-      {/* ─── Floating Copilot Launcher Pill (Hidden on Wizard to prevent overlapping the Next button!) ─── */}
+      {/* ─── Floating Glassmorphic Copilot Launcher Pill (Hidden on Wizard to prevent overlapping the Next button!) ─── */}
       {screen !== "wizard" && (
         <div className="fixed bottom-6 right-6 z-40">
           <button
             onClick={() => setCopilotOpen(true)}
-            className="group flex items-center gap-2.5 px-4 py-3 bg-slate-950 hover:bg-blue-600 text-white rounded-full shadow-xl shadow-slate-950/20 hover:shadow-blue-600/30 transition-all active:scale-95 border border-slate-800"
+            className="group flex items-center gap-3 px-4 py-3 bg-slate-950/90 hover:bg-blue-600 backdrop-blur-md text-white rounded-full shadow-2xl shadow-slate-950/30 hover:shadow-blue-600/40 transition-all duration-300 hover:scale-105 active:scale-95 border border-white/20"
           >
             <div className="relative">
-              <Bot className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
+              <Bot className="w-5 h-5 text-cyan-400 group-hover:text-white transition-colors" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
               <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full" />
             </div>
             <div className="flex flex-col text-left pr-1">
-              <span className="text-xs font-bold leading-none">Saathi Copilot</span>
+              <span className="text-xs font-black tracking-tight leading-none">bima.com Copilot</span>
               <span className="text-[10px] text-slate-400 group-hover:text-blue-100 leading-none mt-1">
                 Ask AI Advisor
               </span>

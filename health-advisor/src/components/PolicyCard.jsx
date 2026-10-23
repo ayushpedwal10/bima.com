@@ -82,7 +82,7 @@ export default function PolicyCard({ ranked, rank, pr, onInspect, isShortlisted,
     : policy.csr >= 85 ? "bg-amber-50 border-amber-200" : "bg-rose-50 border-rose-200"
 
   return (
-    <div className={`bg-white rounded-3xl border transition-all duration-200 hover:shadow-lg ${
+    <div className={`bg-white rounded-3xl border transition-all duration-300 hover-lift ${
       rank === 0
         ? "border-blue-300 shadow-md shadow-blue-500/10 ring-1 ring-blue-500/20"
         : "border-slate-200/90 shadow-2xs hover:border-slate-300"
